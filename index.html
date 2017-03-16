@@ -151,7 +151,31 @@
             case "9":{
                 document.getElementById('question').innerHTML = 'Populate the quantity of phones for each type.';
                 document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
+                $('#content').html('<p><form><fieldset><input id="phone7821" type="number" value="0" />7821</p><input id="phone7841" type="number" value="0" />7841</p><input id="phone8831" type="number" value="0" />8831</p><input id="phone8841" type="number" value="0" />8841</p><input id="phone8851" type="number" value="0" />8851</p><input id="phone8861" type="number" value="0" />8861</p><input id="phoneKEM" type="number" value="0" />Expansion Mod (KEM)</p></fieldset></form><p><button type="button" class="btn" id="numVal">Okay</button></p>')
+                    jQuery(function(){
+                        $("#numVal").blur(function() {
+                        value = $("#phone7821").val(); 
+                        $("#phone7821").text(value);
+                        value = $("#phone7841").val();
+                        $("#phone7841").text(value);
+                        value = $("#phone8831").val();
+                        $("#phone8831").text(value);
+                        value = $("#phone8841").val();
+                        $("#phone8841").text(value);
+                        value = $("#phone8851").val();
+                        $("#phone8851").text(value);
+                        value = $("#phone8861").val();
+                        $("#phone8861").text(value);
+                        value = $("#phoneKEM").val();
+                        $("#phoneKEM").text(value);
+                        console.log(phone8861);
+                        });
+                    });
+
+
+                            $('#content').append('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="2">Submit</button></p>')
+
+
 
                 console.log(value)
                 break;
