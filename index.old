@@ -26,14 +26,9 @@
 
 
     <script>
-    var totalNumPhones = 30;
+    //var totalNumPhones;
     var sendButton;
-    var geoRedundancy;
     var value;
-    var phoneArray;
-    var phone7821;
-    var jabberOnly;
-
     $(document).on('click', '#sendButton', function () {
     var val = $(this).val();
 
@@ -53,13 +48,14 @@
                     // Need to add something to account for hitting enter - resets currently
                     jQuery(function(){
                         $("#numVal").blur(function() {
-                        totalNumPhones = $("#numVal").val(); 
-                        $("#totalNumPhones").text(totalNumPhones);
-                        if (totalNumPhones > 1000) {
-                            document.getElementById('question').innerHTML = 'Sorry, but ' + totalNumPhones + ' phones have been selected.  This product only supports up to 1000 devices.  Click below to see other options.';
+                        value = $("#numVal").val(); 
+                        $("#phones").text(value);
+                        totalNumPhones = value;
+                        if (value > 1000) {
+                            document.getElementById('question').innerHTML = 'Sorry, but ' + value + ' phones have been selected.  This product only supports up to 1000 devices.  Click below to see other options.';
                             $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Continue</button></p>')
                         } else {
-                            document.getElementById('question').innerHTML = totalNumPhones + ' phones have been selected.  Is this correct?';
+                            document.getElementById('question').innerHTML = value + ' phones have been selected.  Is this correct?';
                             $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="2">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="1">No</button></p>')
                         }
                         });
@@ -72,6 +68,7 @@
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note that LDAP is required for the BCE product.</p>';
                 $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="3">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">No</button></p>')
 
+
                 break;
             }
             case "3":{
@@ -79,6 +76,7 @@
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE does not currently support contact center applications (UCCX)</p>';
                 $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
 
+                console.log(value)
                 break;
             }
 
@@ -97,19 +95,19 @@
                 $('#content').html('<p><form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn">Okay</button></p>')
                     jQuery(function(){
                         $("#numVal").blur(function() {
-                        totalSites = $("#numVal").val(); 
-                        $("#totalSites").text(totalSites);
-                        for (i = 0; i < totalSites; i++) { 
+                        value = $("#numVal").val(); 
+                        $("#sites").text(value);
+                        for (i = 0; i < value; i++) { 
                             var chr = String.fromCharCode(65 + i);
                             if (i == 0) {
-                                $('#content').html('<p><form><fieldset><input id="siteNames" name="siteNames[]" type="text" value="SITE ' + chr + '" /></p>') // clear element if first text box
+                                $('#content').html('<p><form><fieldset><input id="numVal" type="text" value="SITE ' + chr + '" /></p>') // clear element if first text box
                                 document.getElementById('message').innerHTML = '<p class="bg-info">Note: sample site names can be replaced in the SOW later.</p>';
                             } else {
-                            $('#content').append('<p><form><fieldset><input id="siteNames" name="siteNames[]" type="text" value="SITE ' + chr + '" /></p>')
+                            $('#content').append('<p><form><fieldset><input id="numVal" type="text" value="SITE ' + chr + '" /></p>')
                             }
                         }
                         // need to serialize site names and add to element or could increment numVal and form names and increment elements
-                        if (totalSites < 2) {
+                        if (value < 2) {
                             $('#content').append('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="8">Continue</button></p>') //skip geo question if only 1 site
                         } else {
                             $('#content').append('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="6">Continue</button></p>')  
@@ -129,16 +127,15 @@
                 break;
             }
             case "7":{
-                geoRedundancy = true;
                 document.getElementById('question').innerHTML = 'At which location will the redundant hardware reside?';
                 document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><form><fieldset><input id="textVal" type="text" value="REDUNDANT SITE" /></p></fieldset></form><p><button type="button" class="btn">Okay</button></p>')
+                $('#content').html('<p><form><fieldset><input id="numVal" type="text" value="REDUNDANT SITE" /></p></fieldset></form><p><button type="button" class="btn">Okay</button></p>')
             // Need to add something to account for hitting enter - resets currently
                 jQuery(function(){
-                    $("#textVal").blur(function() {
-                        redundantSite = $("#textVal").val(); 
-                        $("#redundantSite").text(redundantSite);
-                        document.getElementById('question').innerHTML = 'You have entered ' + redundantSite + ', is this correct?';
+                    $("#numVal").blur(function() {
+                        value = $("#numVal").val(); 
+                        $("#redundantsite").text(value);
+                        document.getElementById('question').innerHTML = 'You have entered ' + value + ', is this correct?';
                         $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="8">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="7">No</button></p>')
                     });
                 });
@@ -155,30 +152,40 @@
             case "9":{
                 document.getElementById('question').innerHTML = 'Populate the quantity of phones for each type.';
                 document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><form action=""><fieldset><input name="phone7821" type="number" value="0" />7821</p><input name="phone7841" type="number" value="0" />7841</p><input name="phone8831" type="number" value="0" />8831</p><input name="phone8841" type="number" value="0" />8841</p><input name="phone8851" type="number" value="0" />8851</p><input name="phone8861" type="number" value="0" />8861</p><input name="phoneKEM" type="number" value="0" />Expansion Mod (KEM)</p></fieldset></form><p>')
-
-                //<input type="submit" name="g" value="Submit" id="g">
-                    
-
-                    $( "form" ).submit(function( event ) {
-                        phoneArray = $( this ).serializeArray();
-                        //console.log( $( this ).serializeArray() );
-                        event.preventDefault();
-                        console.log('phone array is = ' + phoneArray);
+                $('#content').html('<p><form><fieldset><input id="phone7821" type="number" value="0" />7821</p><input id="phone7841" type="number" value="0" />7841</p><input id="phone8831" type="number" value="0" />8831</p><input id="phone8841" type="number" value="0" />8841</p><input id="phone8851" type="number" value="0" />8851</p><input id="phone8861" type="number" value="0" />8861</p><input id="phoneKEM" type="number" value="0" />Expansion Mod (KEM)</p></fieldset></form><p>')
+                    jQuery(function(){
+                        $("#numVal").blur(function() {
+                        value = $("#phone7821").val(); 
+                        $("#phone7821").text(value);
+                        value = $("#phone7841").val();
+                        $("#phone7841").text(value);
+                        value = $("#phone8831").val();
+                        $("#phone8831").text(value);
+                        value = $("#phone8841").val();
+                        $("#phone8841").text(value);
+                        value = $("#phone8851").val();
+                        $("#phone8851").text(value);
+                        value = $("#phone8861").val();
+                        $("#phone8861").text(value);
+                        value = $("#phoneKEM").val();
+                        $("#phoneKEM").text(value);
+                        console.log(phone8861);
+                        });
                     });
-                    
-
-
-
-
+//<button type="button" class="btn" id="numVal">Okay</button></p>
 // need to create a validation for the number of phones to make sure it matches
 
-                            $('#content').append('<p><button type="submit" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="12">Submit</button></p>')
+                            $('#content').append('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="12">Submit</button></p>')
 
+
+
+                console.log(value)
                 break;
             }
 
-              case "10":{
+            
+            
+            case "10":{
                 document.getElementById('question').innerHTML = 'The customer can utilize phones they may already have, but they must be factory reset to erase any hard settings or ITL files which might exist, otherwise they may not register.  Time and material charges will be incurred if supplied phones do not register and require troubleshooting.';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Supported phones are Cisco SIP phones, models: 7821, 7841, 8831, 8841, 8851, and 8861.  Any other models will require SCA approval.  <strong>Do customer phones meet all requirements?</strong></p>';
                 $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="12">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="8">No</button></p>')
@@ -188,74 +195,44 @@
             }
 
             case "11":{
+                document.getElementById('question').innerHTML = 'Jabber Only has been selected.  Customer will be responsible for all Jabber client installations on their supported platforms.  Customer will also be required to keep the Jabber client compliant with any server application versions deployed.  Customer will be responsible for ensuring the appropriate protocols and ports are open on respective device firewalls or access lists.';
+                $('#content').html('<p><button type="button" class="btn" id="numVal" value="Yes">Acknowledge</button></p>')
+                    //$('#content').html('<form><fieldset><input id="numVal" type="button" value="Yes" />Expansion Mod (KEM)</p></fieldset></form>')
+            // Need to add something to account for hitting enter - resets currently
+                jQuery(function(){
+                    $("#numVal").click(function() {
+                        value = $("#numVal").val(); 
+                        $("#jabberonly").text(value);
+                        console.log("function triggered")
+                        //value = $("#jabberonly").val(); 
+                        $('#content').append('Jabber?' + value);
+                    });
+                });
+                console.log(value);
+                console.log(totalNumPhones);
+                break;
 
-                jabberOnly = true;
             }
-
             case "12":{
-                if (!jabberOnly) {
-                    $("#jabberOnly").val(jabberOnly);
-                    phone7821 = Number(jQuery('input[name="phone7821"]').val());
-                    phone7841 = Number(jQuery('input[name="phone7841"]').val());
-                    phone8831 = Number(jQuery('input[name="phone8831"]').val());
-                    phone8841 = Number(jQuery('input[name="phone8841"]').val());
-                    phone8851 = Number(jQuery('input[name="phone8851"]').val());
-                    phone8861 = Number(jQuery('input[name="phone8861"]').val());
-                    phoneKEM = Number(jQuery('input[name="phoneKEM"]').val());
-                    $("#phone7821").text(phone7821);
-                    $("#phone7841").text(phone7821);
-                    $("#phone8831").text(phone7821);
-                    $("#phone8841").text(phone7821);
-                    $("#phone8851").text(phone7821);
-                    $("#phone8861").text(phone7821);
-                    $("#phoneKEM").text(phoneKEM);
-
-
-                    var sumPhoneInput = phone7821 + phone7841 + phone8831 + phone8841 + phone8851 + phone8861;
-                    if (sumPhoneInput != totalNumPhones) {
-                        document.getElementById('question').innerHTML = 'The total number of phones selected is <strong>' + totalNumPhones + '</strong>, but the sum of the models entered is <strong>' + sumPhoneInput + '</strong>.  Please confirm that this discrepancy is intentional.';
-                        document.getElementById('message').innerHTML = '<p class="bg-info">Note: this is accepted if there will be a mix of hard phone users and Jabber client users.';
-                        $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="13">Yes, continue</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="9">No, go back</button></p>')
-                        break;
-                    }
-
-                } else if (jabberOnly); {
-                    $("#jabberOnly").text(jabberOnly);
-                }
-
-                 // break;
+                document.getElementById('question').innerHTML = 'placeholder';
+                document.getElementById('message').innerHTML = '';
+                $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
+                jQuery(function(){
+                    console.log("function 2 triggered")
+                    $("#content").load(function() {
+                        value = $("#jabberonly").val(); 
+                        $('#content').append('Jabber?' + value)
+                    });
+                });
+                var el = document.jabberonly;
+                console.dir(el);
+                break;
             }
 
             case "13":{
-                document.getElementById('question').innerHTML = 'Enter the total number of analog FAX machines required.';
-                document.getElementById('message').innerHTML = '<p class="bg-info">Note: Sprint SIPT supports T.38 compliant faxing, though it is recommended for customers to use POTS (1mb) lines for FAX, as it is best effort.</p>';
-                
-                    $('#content').html('<p><form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn">Submit</button>')
-                        // Need to add something to account for hitting enter - resets currently
-                        jQuery(function(){
-                            $("#numVal").blur(function() {
-                            totalNumFax = Number($("#numVal").val()); 
-                            $("#totalNumFax").text(totalNumFax);
-                            
-                            document.getElementById('question').innerHTML = 'Enter the total number of analog phone connections required.';
-                            document.getElementById('message').innerHTML = "<p class='bg-info'>It is the customer's responsibility to procure and wire analog phones to Sprint placed ATA device.</p>";                                
-                            $('#content').html('<p><form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn">Submit</button>')
-
-                                jQuery(function(){
-                                $("#numVal").blur(function() {
-                                    totalNumAnalog = Number($("#numVal").val());
-                                    totalNumATA = Math.ceil(totalNumFax + totalNumAnalog)/2;
-
-
-                                    if (totalNumATA > 0) {
-
-                                    document.getElementById('question').innerHTML = 'A total of <strong>' + totalNumATA + '</strong> ATA190 devices are required to support this configuration.  Each ATA190 device is equipped with two (2) analog ports.';
-                                    $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="14">Continue</button></p>')
-                                    }
-                                });     
-                            });  
-                        });
-                    });
+                document.getElementById('question').innerHTML = 'Does the customer have Sprint MPLS?  If not, will they before implementation?';
+                document.getElementById('message').innerHTML = '<p class="bg-info">Note: Sprint MPLS is required for BCE.</p>';
+                $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="5">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">No</button></p>')
 
 
                 break;
@@ -391,7 +368,7 @@
             <div class="col-xs-12 col-sm-8";">
                 <div></div><br>
                     <p id="content">
-                    <script>$('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="8">Get Started!</button></p>');
+                    <script>$('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="0">Get Started!</button></p>');
                     </script>
                     </p>
             </div>
@@ -399,31 +376,14 @@
     </div>
 
     <footer>
-       <div class="container" hidden>
+       <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">Phones
-                    <div id="totalNumPhones"></div>
+                    <div id="phones"></div>
                 </div>
-                <div class="col-xs-12 col-sm-8">JabberOnly?
-                    <div id="jabberOnly"></div>
-                </div>
-                <div class="col-xs-12 col-sm-8">Sites
-                    <div id="totalSites"></div>
-                </div>
-                <div class="col-xs-12 col-sm-8">Redundancy?
-                    <div id="jabberOnly"></div>
-                </div>
-                <div class="col-xs-12 col-sm-8">Redundant Site
-                    <div id="redundantSite"></div>
-                </div>
-                <div class="col-xs-12 col-sm-8">jabberOnly
-                    <div id="jabberOnly"></div>
-                </div>
-                <div class="col-xs-12 col-sm-8">phone7821
-                    <div id="phone7821"></div>
-                </div>
-                <div class="col-xs-12 col-sm-8">phoneKEM
-                    <div id="phoneKEM"></div>
+                            <div class="row">
+                <div class="col-xs-12 col-sm-8">jabberonly
+                    <div id="jabberonly"></div>
                 </div>
             </div> 
         </div>
