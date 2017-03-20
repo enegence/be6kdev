@@ -212,8 +212,6 @@
 
 
                     var sumPhoneInput = phone7821 + phone7841 + phone8831 + phone8841 + phone8851 + phone8861;
-                    if (phoneKEM > 1)
-                        document.getElementById('question').innerHTML = 'Multiple Key Expansion Modules have been selected.  Note that in some cases, IP Phone Power Cubes may be necessary, depending on the number of KEMs and the Power over Ethernet standard the customer switches support.  <div class="table-responsive">  <table class="table">    <thead>      <tr>        <th>Config</th>        <th>PoE 802.3af</th>        <th>PoE 802.3at</th>        <th>Power Cube</th>       </tr>    </thead>    <tbody>      <tr>        <td>8851 + KEM x 1</td>        <td>Yes</td>        <td>Yes</td>        <td>Yes</td>       </tr>       <tr>        <td>8851 + KEM x 2</td>        <td>No</td>        <td>No</td>        <td>Yes</td>       </tr>       <tr>        <td>8861 + KEM x 1</td>        <td>No</td>        <td>Yes</td>        <td>Yes</td>       </tr>       <tr>        <td>8861 + KEM x 2</td>        <td>No</td>        <td>Yes</td>        <td>Yes</td>       </tr>      <tr>        <td>8861 + KEM x 3</td>        <td>No</td>        <td>Yes</td>        <td>Yes</td>       </tr>       <tr>        <td>8865 + KEM x 1</td>        <td>No</td>        <td>Yes</td>        <td>Yes</td>       </tr>       <tr>        <td>8865 + KEM x 2</td>        <td>No</td>        <td>Yes</td>        <td>Yes</td>       </tr>       <tr>        <td>8865 + KEM x 3</td>        <td>No</td>        <td>Yes</td>        <td>Yes</td>       </tr>    </tbody>  </table>  </div></div>';
                     if (sumPhoneInput != totalNumPhones) {
                         document.getElementById('question').innerHTML = 'The total number of phones selected is <strong>' + totalNumPhones + '</strong>, but the sum of the models entered is <strong>' + sumPhoneInput + '</strong>.  Please confirm that this discrepancy is intentional.';
                         document.getElementById('message').innerHTML = '<p class="bg-info">Note: this is accepted if there will be a mix of hard phone users and Jabber client users.';
@@ -338,7 +336,7 @@
                 break;
             }  
             case "100":{
-                document.getElementById('question').innerHTML = "Business Collaboration Express may not be the best fit.  Here's why:";
+                document.getElementById('question').innerHTML = "Business Collaboration Express may not be the best fit.";
                 document.getElementById('message').innerHTML = "";
                 $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="0">Start Over</button></p>')
 
