@@ -247,7 +247,7 @@
                                 jQuery(function(){
                                 $("#numVal").blur(function() {
                                     totalNumAnalog = Number($("#numVal").val());
-                                    totalNumATA = Math.ceil(totalNumFax + totalNumAnalog)/2;
+                                    totalNumATA = Math.ceil((totalNumFax + totalNumAnalog)/2);
 
 
                                     if (totalNumATA > 0) {
@@ -268,8 +268,9 @@
                 if (phoneKEM > 1) {
                     console.log('in the if statement');
                     document.getElementById('question').innerHTML = 'Multiple Key Expansion Modules have been selected.  Note that in some cases, IP Phone Power Cubes may be necessary, depending on the number of KEMs and the Power over Ethernet standard the customer switches support.';
+                    document.getElementById('message').innerHTML = "<p class='bg-info'></p>";  
 
-                    $('#content').html('<p>View Compatibility Table</p><p><button type="button" class="btn" id="onClick" value="onClick">Okay</button></p>')
+                    $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="onClick" value="onClick">View Compatibility Table</button></p>')
 
                     
 
@@ -284,7 +285,7 @@
                                 $("#onClick2").click(function() {
                                     document.getElementById('question').innerHTML = 'Please enter the total number of Cisco power supply cubes required.';
                                     
-                                    $('#content').html('<p><form><input id="numVal" type="number" value="0" /></p></fieldset></form><p><button type="button" class="btn" id="sendButton" value=>Update Quantity</button></form></p>')
+                                    $('#content').html('<p><form><input id="numVal" type="number" value="0" /></p></fieldset></form><p><button type="button" class="btn" id="sendButton" value="15">Update Quantity</button></form></p>')
                                         jQuery(function(){
                                             $("#numVal").blur(function() {
                                             phoneCubes = Number($("#numVal").val()); 
@@ -302,13 +303,13 @@
 
                 //document.getElementById('question').innerHTML = 'Does the customer currently have Active Directory (AD) or a compatible directory service for LDAP syncronization?';
                 //document.getElementById('message').innerHTML = '<p class="bg-info">Note that LDAP is required for the BCE product.</p>';
-                $('#content').append('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="3">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">No</button></p>')
+                //$('#content').append('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="3">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">No</button></p>')
 
 
                 break;
             }
             case "15":{
-                document.getElementById('question').innerHTML = 'Is there any requirement for a contact center?';
+                document.getElementById('question').innerHTML = 'FROGGER';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE does not currently support contact center applications (UCCX)</p>';
                 $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
 
