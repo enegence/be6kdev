@@ -279,14 +279,14 @@
                             document.getElementById('question').innerHTML = 'Power-Supply Compatibility Table';
 
                             $('#content').html('<div class="table-responsive table-hover table-bordered table-striped"><table class="table"><thead><tr><th>Config</th><th>PoE 802.3af</th><th>PoE 802.3at</th><th>Power Cube</th></tr></thead><tbody><tr><td>8851 + KEM x 1</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>8851 + KEM x 2</td><td>No</td><td>No</td><td>Yes</td></tr><tr><td>8861 + KEM x 1</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8861 + KEM x 2</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8861 + KEM x 3</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 1</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 2</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 3</td><td>No</td><td>Yes</td><td>Yes</td></tr></tbody></table></div></div><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="onClick2" value="">Continue</button></p>')
-                            
+
                             jQuery(function(){
                                 $("#onClick2").click(function() {
                                     document.getElementById('question').innerHTML = 'Please enter the total number of Cisco power supply cubes required.';
                                     
-                                    $('#content').html('<p><form><input id="numVal" type="number" value="0" /></p></fieldset></form><p><button type="button" class="btn" id="numVal">Okay</button></form></p>')
+                                    $('#content').html('<p><form><input id="numVal" type="number" value="0" /></p></fieldset></form><p><button type="button" class="btn" id="sendButton" value=>Update Quantity</button></form></p>')
                                         jQuery(function(){
-                                            $("#numVal").submit(function() {
+                                            $("#numVal").blur(function() {
                                             phoneCubes = Number($("#numVal").val()); 
                                             $("#phoneCubes").text(phoneCubes);
                                             console.log(phoneCubes);
@@ -298,6 +298,7 @@
                     });
                 }
               
+
 
                 //document.getElementById('question').innerHTML = 'Does the customer currently have Active Directory (AD) or a compatible directory service for LDAP syncronization?';
                 //document.getElementById('message').innerHTML = '<p class="bg-info">Note that LDAP is required for the BCE product.</p>';
