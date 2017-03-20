@@ -252,8 +252,11 @@
 
                                     if (totalNumATA > 0) {
 
-                                    document.getElementById('question').innerHTML = 'A total of ' + totalNumATA + ' ATA190 devices are required to support this configuration.  Each ATA190 device is equipped with two (2) analog ports.';
-                                    $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="14">Continue</button></p>')
+                                        document.getElementById('question').innerHTML = 'A total of ' + totalNumATA + ' ATA190 devices are required to support this configuration.  Each ATA190 device is equipped with two (2) analog ports.';
+                                        $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="14">Continue</button></p>')
+                                    } else {
+                                        document.getElementById('question').innerHTML = 'No analog devices will be supported for this build, and no ATA devices are needed.';
+                                        $('#content').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="14">Continue</button></p>')
                                     }
                                 });     
                             });  
@@ -279,7 +282,7 @@
                             console.log('in onclick');
                             document.getElementById('question').innerHTML = 'Power-Supply Compatibility Table';
 
-                            $('#content').html('<div class="table-responsive table-hover table-bordered table-striped"><table class="table"><thead><tr><th>Config</th><th>PoE 802.3af</th><th>PoE 802.3at</th><th>Power Cube</th></tr></thead><tbody><tr><td>8851 + KEM x 1</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>8851 + KEM x 2</td><td>No</td><td>No</td><td>Yes</td></tr><tr><td>8861 + KEM x 1</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8861 + KEM x 2</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8861 + KEM x 3</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 1</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 2</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 3</td><td>No</td><td>Yes</td><td>Yes</td></tr></tbody></table></div></div><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="onClick2" value="">Continue</button></p>')
+                            $('#content').html('<div class="container"><table class="table table-responsive table-hover table-bordered table-striped table-condensed"><thead><tr><th>Config</th><th>PoE 802.3af</th><th>PoE 802.3at</th><th>Power Cube</th></tr></thead><tbody><tr><td>8851 + KEM x 1</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>8851 + KEM x 2</td><td>No</td><td>No</td><td>Yes</td></tr><tr><td>8861 + KEM x 1</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8861 + KEM x 2</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8861 + KEM x 3</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 1</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 2</td><td>No</td><td>Yes</td><td>Yes</td></tr><tr><td>8865 + KEM x 3</td><td>No</td><td>Yes</td><td>Yes</td></tr></tbody></table></div></div><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="onClick2" value="">Continue</button></p>')
 
                             jQuery(function(){
                                 $("#onClick2").click(function() {
@@ -308,7 +311,7 @@
             case "15":{
                 document.getElementById('question').innerHTML = 'Enter the number of voicemail boxes requested.';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note: this is usually equal to the number of phones, but can be reduced to lower cost if not needed.</p>';
-                $('#content').html('<p><form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton">Submit</button>')
+                $('#content').html('<p><form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="16">Submit</button>')
                         // Need to add something to account for hitting enter - resets currently
                         jQuery(function(){
                             $("#numVal").blur(function() {
