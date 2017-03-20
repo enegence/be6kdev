@@ -26,7 +26,7 @@
 
 
     <script>
-    var totalNumPhones = 30;
+    var totalNumPhones;
     var sendButton;
     var geoRedundancy;
     var value;
@@ -306,8 +306,8 @@
                 
             }
             case "15":{
-                document.getElementById('question').innerHTML = 'FROGGER';
-                document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE does not currently support contact center applications (UCCX)</p>';
+                document.getElementById('question').innerHTML = 'Enter the total number of VM boxes requested.';
+                document.getElementById('message').innerHTML = "<p class="bg-info">Note: usually this will be equal to the number of phones, though it doesn't have to be.</p>";
                 $('#selections').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
 
                 console.log(value)
