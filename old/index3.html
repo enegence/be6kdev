@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" selections="IE=edge">
+    <meta name="viewport" selections="width=device-width, initial-scale=1">
     
     <title>BE6K Qualification Wizard</title>
     
@@ -26,7 +26,7 @@
 
 
     <script>
-    var totalNumPhones;
+    var totalNumPhones = 30;
     var sendButton;
     var geoRedundancy;
     var value;
@@ -42,14 +42,14 @@
             case "0":{
                 document.getElementById('question').innerHTML = 'Is this a new or Existing system?';
                 document.getElementById('message').innerHTML = '';
-                $('#selections').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="1">New Phone System</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="2">Use Existing System</button></p>')
+                $('#selections').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="1">New Phone System</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="101">Use Existing System</button></p>')
                 break;
             }
 
             case "1":{ 
                 document.getElementById('question').innerHTML = '<p>How many phones will be installed?</p>';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE will support up to 1000 phones maximum</p>';
-                $('#selections').html('<p><form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn">Okay</button>')
+                $('#selections').html('<form><fieldset><input id="numVal" type="number" value="" /></p></fieldset></form><button type="button" class="btn">Okay</button>')
                     // Need to add something to account for hitting enter - resets currently
                     jQuery(function(){
                         $("#numVal").blur(function() {
@@ -72,7 +72,8 @@
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note that LDAP is required for the BCE product.</p>';
                 $('#selections').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="3">Yes</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">No</button></p>')
 
-                break;
+                break;  
+
             }
             case "3":{
                 document.getElementById('question').innerHTML = 'Is there any requirement for a contact center?';
@@ -131,7 +132,7 @@
             case "7":{
                 geoRedundancy = true;
                 document.getElementById('question').innerHTML = 'At which location will the redundant hardware reside?';
-                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
                 $('#selections').html('<p><form><fieldset><input id="textVal" type="text" value="REDUNDANT SITE" /></p></fieldset></form><p><button type="button" class="btn">Okay</button></p>')
             // Need to add something to account for hitting enter - resets currently
                 jQuery(function(){
@@ -154,7 +155,7 @@
             }
             case "9":{
                 document.getElementById('question').innerHTML = 'Populate the quantity of phones for each type.';
-                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
                 $('#selections').html('<p><form action=""><fieldset><input name="phone7821" type="number" value="0" />7821</p><input name="phone7841" type="number" value="0" />7841</p><input name="phone8831" type="number" value="0" />8831</p><input name="phone8841" type="number" value="0" />8841</p><input name="phone8851" type="number" value="0" />8851</p><input name="phone8861" type="number" value="0" />8861</p><input name="phoneKEM" type="number" value="0" />Expansion Mod (KEM)</p></fieldset></form><p>')
 
                 //<input type="submit" name="g" value="Submit" id="g">
@@ -263,7 +264,7 @@
 
                 break;
             } 
-            case "14":{
+            /*case "14":{
 
                 if (phoneKEM > 1) {
                     console.log('in the if statement');
@@ -304,10 +305,10 @@
               
 
                 
-            }
+            } */
             case "15":{
-                document.getElementById('question').innerHTML = 'Enter the total number of VM boxes requested.';
-                document.getElementById('message').innerHTML = "<p class="bg-info">Note: usually this will be equal to the number of phones, though it doesn't have to be.</p>";
+                document.getElementById('question').innerHTML = 'FROGGER';
+                document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE does not currently support contact center applications (UCCX)</p>';
                 $('#selections').html('<p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-secondary btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
 
                 console.log(value)
@@ -398,6 +399,7 @@
             }
         return false;
     });
+
     </script>
 
 </head>

@@ -1,0 +1,28 @@
+blur functions with buttons need to be able to envoke function with submit too (redundant site example)
+
+No analog devices will be supported for this build, and no ATA devices are needed. // change wording
+
+Note: to support SRST, the customer must have PSTN access to the router. // rephrase to PSTN connectivity 
+
+*this is okay if there will be a mix of jabber-client-only devices
+
+Number of vm boxes // set default value and see if we can make the box spaced better against the submit button
+
+Enter total number of sites // change question to reflect "enter names below"
+
+modal to explain geo-redundancy (hyper link)
+
+add message on phone page stating that each phone type can be clicked for more information
+
+
+analog and fax machine need submit button functionality and default values set to 0
+analog and fax machine need same type of submit button
+
+Are site name values current stored in vars?
+
+redundant site name button needs to work on submit and not just blur
+is this stored in var?
+
+
+
+(note about georedundancy meaning servers at two physical locations, as opposed to a single head site)
