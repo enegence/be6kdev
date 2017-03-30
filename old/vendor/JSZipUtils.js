@@ -12,7 +12,7 @@
 
 
   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-5b61aadc846f0818981ceec31b49c475fb084c163fdec5efbc2c21ef539092a9.css" integrity="sha256-W2Gq3IRvCBiYHO7DG0nEdfsITBY/3sXvvCwh71OQkqk=" media="all" rel="stylesheet" />
-  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-c9c526463f5ffa74c1d350222904e12065e085b6bd4597c9a7b141dd53e24733.css" integrity="sha256-ycUmRj9f+nTB01AiKQThIGXghba9RZfJp7FB3VPiRzM=" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-0c02870dc9ba1c994e29151ec7c3d80007b73ed85f616f5bae5e5e5a2eb2e292.css" integrity="sha256-DAKHDcm6HJlOKRUex8PYAAe3PthfYW9brl5eWi6y4pI=" media="all" rel="stylesheet" />
   
   
   
@@ -20,7 +20,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>docxtemplater/file-saver.min.js at master · open-xml-templating/docxtemplater</title>
+  <title>docxtemplater/jszip-utils.js at master · open-xml-templating/docxtemplater</title>
   <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
   <meta property="fb:app_id" content="1401488693436528">
@@ -29,10 +29,10 @@
     <meta content="https://avatars0.githubusercontent.com/u/11191156?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="open-xml-templating/docxtemplater" property="og:title" /><meta content="https://github.com/open-xml-templating/docxtemplater" property="og:url" /><meta content="Generate docx and pptx (microsoft word documents) from templates, from Node.js, the Browser and the command line / Demo: http://javascript-ninja.fr/docxtemplater/v3/examples/demo.html" property="og:description" />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTU5NzE4ODYwOjkxMThhN2JlMzE1YTBlNDJkMjIzYzlmZDhjNjQ1ZDk2ZDRmZTMzNDQwOTIzNjI4ZTc2NmU1MTIzNzliNTFkMzE=--0fe8f79e94b03fd9b86caa1e2c5cbd3cce59a917">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTU5NzE4ODYwOmJlNWFkM2Y5NjgwZTA3MGE5MmY2MTU3OGQ2NDlkZDJlMGJmNjEzODgxZTg5MGZhY2RjNTEzNTBmNjlkNDk1MTc=--eb035a4d0099d6e172e7b0604b9fa18cf0654247">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="EE6A:1A122:725E53:BA3282:58D9F4CB" data-pjax-transient>
+  <meta name="request-id" content="FB4F:BD3E:AADD67:1130A15:58DC2A95" data-pjax-transient>
   
 
   <meta name="selected-link" value="repo_source" data-pjax-transient>
@@ -41,7 +41,7 @@
 <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="EE6A:1A122:725E53:BA3282:58D9F4CB" name="octolytics-dimension-request_id" /><meta content="21273320" name="octolytics-actor-id" /><meta content="enegence" name="octolytics-actor-login" /><meta content="4cee8a1da8322d6e28036e21ca28e23f3d5054ac05c2895235492c19687e8395" name="octolytics-actor-hash" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="FB4F:BD3E:AADD67:1130A15:58DC2A95" name="octolytics-dimension-request_id" /><meta content="21273320" name="octolytics-actor-id" /><meta content="enegence" name="octolytics-actor-login" /><meta content="4cee8a1da8322d6e28036e21ca28e23f3d5054ac05c2895235492c19687e8395" name="octolytics-actor-hash" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
@@ -56,12 +56,12 @@
   <meta name="user-login" content="enegence">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="NzEzMjgzNzliZDM1ZWVmYzI2NWIzMTdjMTJkMDA4M2E5YzAzN2VmY2QzZTBiZDRhY2RlMTJkMmQyMDA2YjA0MXx7InJlbW90ZV9hZGRyZXNzIjoiNDUuMjIuMTA1LjM3IiwicmVxdWVzdF9pZCI6IkVFNkE6MUExMjI6NzI1RTUzOkJBMzI4Mjo1OEQ5RjRDQiIsInRpbWVzdGFtcCI6MTQ5MDY3ODk5NSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+    <meta name="js-proxy-site-detection-payload" content="NTdjN2NhYjg2YjAzYWVjZmQ3MmFhMDhlMzcxMTE0MTkxNWQyMzJlMGNjYmE5YTAyODNmOWRmYjU5ZDgwYzA2Y3x7InJlbW90ZV9hZGRyZXNzIjoiNDUuMjIuMTA1LjM3IiwicmVxdWVzdF9pZCI6IkZCNEY6QkQzRTpBQURENjc6MTEzMEExNTo1OERDMkE5NSIsInRpbWVzdGFtcCI6MTQ5MDgyMzgyOSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
 
   <meta name="html-safe-nonce" content="71be2722741a1e985dfee52dfd3f869eb2c7ed7d">
 
-  <meta http-equiv="x-pjax-version" content="8567529326e069382fdf44816c65dc75">
+  <meta http-equiv="x-pjax-version" content="34a3c3336c013801d1b1d41887845184">
   
 
     
@@ -72,7 +72,7 @@
         <link href="https://github.com/open-xml-templating/docxtemplater/commits/master.atom" rel="alternate" title="Recent Commits to docxtemplater:master" type="application/atom+xml">
 
 
-    <link rel="canonical" href="https://github.com/open-xml-templating/docxtemplater/blob/master/vendor/file-saver.min.js" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/open-xml-templating/docxtemplater/blob/master/vendor/jszip-utils.js" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -114,7 +114,7 @@
         <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
   <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/search" class="js-site-search-form" data-scoped-search-url="/open-xml-templating/docxtemplater/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
     <label class="form-control header-search-wrapper js-chromeless-input-container">
-        <a href="/open-xml-templating/docxtemplater/blob/master/vendor/file-saver.min.js" class="header-search-scope no-underline">This repository</a>
+        <a href="/open-xml-templating/docxtemplater/blob/master/vendor/jszip-utils.js" class="header-search-scope no-underline">This repository</a>
       <input type="text"
         class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
         data-hotkey="s"
@@ -230,7 +230,7 @@
           Settings
         </a>
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XArVLUJi3tGSOQEQBuSwWYQlJW96ctPJEzuCSVPg6wpXykVfnC+5dM+OUeQRtAc2t6q9Y+V7FjS/ROPr0ug0/g==" /></div>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="daMz2ICDtDucxV1OSJn3rYg6qDZNreXzbnG4n+axagp+Y6OqXs7TnsFyDbpfyUDCu7UwOtKkIA7CDtk9Z7m1/g==" /></div>
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -240,7 +240,7 @@
 </ul>
 
 
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Gz+8OqWDHYOpAGdv+SvgILHfNV89JVYZtm9Fp4cfVBgQ/yxIe856JvS3N5vue1dPglCtU6Isk+QaECQFBheL7A==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="/+ikpNzDwDdE1MH5CaNk2JjPpusevCuHj1TG2ON+Nxz0KDTWAo6nkhljkQ0e89O3q0A+54G17nojK6d6Ynbo6A==" /></div>
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
         Sign out
       </button>
@@ -272,7 +272,7 @@
 
       <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ctU8dUmoNEs+ODXbY87y/mE1KEqq4tO1DM+UAM8BksSO/+p8hHUGn9tf2HZGJBeU2/ljk9SrP7UVK4SutF8oQw==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="10098528" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="lpX/oSbbdshDCkFs0IuDF7COHBwbEBK9+TeYlov/Hz5qvymo6wZEHKZtrMH1YWZ9CkJXxWVZ/r3g04g48KGluQ==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="10098528" />
 
         <div class="select-menu js-menu-container js-select-menu">
           <a href="/open-xml-templating/docxtemplater/subscription"
@@ -347,7 +347,7 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="IH70trimZR+QSsZJXbmDo9+nA926DbWYePb5EHzggI/7cbieLAInvE0hCkhcvNE+X6cpdQjEEeMm1R2H1wgDCg==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="KS+m511Csd8yG/qHqMn4MJcf3RCWeztfRZvEv1+sJpPyIOrPyebzfO9wNoapzKqtFx/3uCSynyQbuCAo9ESlFg==" /></div>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
@@ -357,11 +357,11 @@
         Unstar
       </button>
         <a class="social-count js-social-count" href="/open-xml-templating/docxtemplater/stargazers"
-           aria-label="547 users starred this repository">
-          547
+           aria-label="550 users starred this repository">
+          550
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="mURRZf88kNb1E8mJNA3kGKSrvs/IWxK8ZcxxaFY+f0AteTrZ715+qmiVeRFOd9RnUozBL7IP89zFNDXekjGzgA==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NVjnVRp0MGncpl/5aCUwofW4ACnzU98QI0kG8eZ+dNeBZYzpChbeFUEg72ESXwDeA59/yYkHPnCDsUJHInG4Fw==" /></div>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
@@ -371,15 +371,15 @@
         Star
       </button>
         <a class="social-count js-social-count" href="/open-xml-templating/docxtemplater/stargazers"
-           aria-label="547 users starred this repository">
-          547
+           aria-label="550 users starred this repository">
+          550
         </a>
 </form>  </div>
 
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VVaRlQg+LtZGHumqwNdKYPf3TOUnKYuwTJzeZcKgz7EX6M8nz91IWPx805rlY7lX+znJG71WAVApi//DAJ9PjA==" /></div>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qjkT6but9a804amNCtMlKzqgloG10+/0ddmre0menvToh01bfE6TIY6Dk70vZ9YcNm4Tfy+sZRQQzordi6EeyQ==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
@@ -466,9 +466,9 @@
 
     
 
-<a href="/open-xml-templating/docxtemplater/blob/2b5f3b79c931eff4fef5028aabde83c9651df915/vendor/file-saver.min.js" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+<a href="/open-xml-templating/docxtemplater/blob/2b5f3b79c931eff4fef5028aabde83c9651df915/vendor/jszip-utils.js" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
-<!-- blob contrib key: blob_contributors:v21:59e50000c05924fea6c235e7c7912d1c -->
+<!-- blob contrib key: blob_contributors:v21:5567cf6dc01e1aa38cc533158b32a903 -->
 
 <div class="file-navigation js-zeroclipboard-container">
   
@@ -510,7 +510,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open selected"
-               href="/open-xml-templating/docxtemplater/blob/master/vendor/file-saver.min.js"
+               href="/open-xml-templating/docxtemplater/blob/master/vendor/jszip-utils.js"
                data-name="master"
                data-skip-pjax="true"
                rel="nofollow">
@@ -529,7 +529,7 @@
 
 
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.8/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.8/vendor/jszip-utils.js"
               data-name="v3.0.8"
               data-skip-pjax="true"
               rel="nofollow">
@@ -539,7 +539,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.7/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.7/vendor/jszip-utils.js"
               data-name="v3.0.7"
               data-skip-pjax="true"
               rel="nofollow">
@@ -549,7 +549,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.6/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.6/vendor/jszip-utils.js"
               data-name="v3.0.6"
               data-skip-pjax="true"
               rel="nofollow">
@@ -559,7 +559,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.5/vendor/jszip-utils.js"
               data-name="v3.0.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -569,7 +569,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.4/vendor/jszip-utils.js"
               data-name="v3.0.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -579,7 +579,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.3/vendor/jszip-utils.js"
               data-name="v3.0.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -589,7 +589,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.2/vendor/jszip-utils.js"
               data-name="v3.0.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -599,7 +599,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.1/vendor/jszip-utils.js"
               data-name="v3.0.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -609,7 +609,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v3.0.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v3.0.0/vendor/jszip-utils.js"
               data-name="v3.0.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -619,7 +619,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.1.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.1.5/vendor/jszip-utils.js"
               data-name="v2.1.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -629,7 +629,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.1.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.1.4/vendor/jszip-utils.js"
               data-name="v2.1.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -639,7 +639,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.1.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.1.3/vendor/jszip-utils.js"
               data-name="v2.1.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -649,7 +649,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.1.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.1.2/vendor/jszip-utils.js"
               data-name="v2.1.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -659,7 +659,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.1.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.1.1/vendor/jszip-utils.js"
               data-name="v2.1.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -669,7 +669,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.1.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.1.0/vendor/jszip-utils.js"
               data-name="v2.1.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -679,7 +679,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v2.0.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v2.0.0/vendor/jszip-utils.js"
               data-name="v2.0.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -689,7 +689,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.2.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.2.1/vendor/jszip-utils.js"
               data-name="v1.2.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -699,7 +699,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.2.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.2.0/vendor/jszip-utils.js"
               data-name="v1.2.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -709,7 +709,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.6/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.6/vendor/jszip-utils.js"
               data-name="v1.1.6"
               data-skip-pjax="true"
               rel="nofollow">
@@ -719,7 +719,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.5/vendor/jszip-utils.js"
               data-name="v1.1.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -729,7 +729,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.4/vendor/jszip-utils.js"
               data-name="v1.1.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -739,7 +739,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.3/vendor/jszip-utils.js"
               data-name="v1.1.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -749,7 +749,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.2/vendor/jszip-utils.js"
               data-name="v1.1.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -759,7 +759,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.1/vendor/jszip-utils.js"
               data-name="v1.1.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -769,7 +769,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.1.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.1.0/vendor/jszip-utils.js"
               data-name="v1.1.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -779,7 +779,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.8/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.8/vendor/jszip-utils.js"
               data-name="v1.0.8"
               data-skip-pjax="true"
               rel="nofollow">
@@ -789,7 +789,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.7/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.7/vendor/jszip-utils.js"
               data-name="v1.0.7"
               data-skip-pjax="true"
               rel="nofollow">
@@ -799,7 +799,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.6/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.6/vendor/jszip-utils.js"
               data-name="v1.0.6"
               data-skip-pjax="true"
               rel="nofollow">
@@ -809,7 +809,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.5/vendor/jszip-utils.js"
               data-name="v1.0.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -819,7 +819,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.4/vendor/jszip-utils.js"
               data-name="v1.0.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -829,7 +829,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.3/vendor/jszip-utils.js"
               data-name="v1.0.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -839,7 +839,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.2/vendor/jszip-utils.js"
               data-name="v1.0.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -849,7 +849,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.1/vendor/jszip-utils.js"
               data-name="v1.0.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -859,7 +859,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.0/vendor/jszip-utils.js"
               data-name="v1.0.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -869,7 +869,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.0-beta.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.0-beta.2/vendor/jszip-utils.js"
               data-name="v1.0.0-beta.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -879,7 +879,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v1.0.0-beta/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v1.0.0-beta/vendor/jszip-utils.js"
               data-name="v1.0.0-beta"
               data-skip-pjax="true"
               rel="nofollow">
@@ -889,7 +889,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.7/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.7/vendor/jszip-utils.js"
               data-name="v0.7.7"
               data-skip-pjax="true"
               rel="nofollow">
@@ -899,7 +899,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.6/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.6/vendor/jszip-utils.js"
               data-name="v0.7.6"
               data-skip-pjax="true"
               rel="nofollow">
@@ -909,7 +909,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.5/vendor/jszip-utils.js"
               data-name="v0.7.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -919,7 +919,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.4/vendor/jszip-utils.js"
               data-name="v0.7.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -929,7 +929,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.3/vendor/jszip-utils.js"
               data-name="v0.7.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -939,7 +939,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.2/vendor/jszip-utils.js"
               data-name="v0.7.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -949,7 +949,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.1/vendor/jszip-utils.js"
               data-name="v0.7.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -959,7 +959,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.7.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.7.0/vendor/jszip-utils.js"
               data-name="v0.7.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -969,7 +969,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.6.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.6.3/vendor/jszip-utils.js"
               data-name="v0.6.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -979,7 +979,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.6.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.6.2/vendor/jszip-utils.js"
               data-name="v0.6.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -989,7 +989,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.6.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.6.1/vendor/jszip-utils.js"
               data-name="v0.6.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -999,7 +999,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.6.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.6.0/vendor/jszip-utils.js"
               data-name="v0.6.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1009,7 +1009,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.9/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.9/vendor/jszip-utils.js"
               data-name="v0.5.9"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1019,7 +1019,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.8/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.8/vendor/jszip-utils.js"
               data-name="v0.5.8"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1029,7 +1029,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.7/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.7/vendor/jszip-utils.js"
               data-name="v0.5.7"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1039,7 +1039,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.6/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.6/vendor/jszip-utils.js"
               data-name="v0.5.6"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1049,7 +1049,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.5/vendor/jszip-utils.js"
               data-name="v0.5.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1059,7 +1059,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.4/vendor/jszip-utils.js"
               data-name="v0.5.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1069,7 +1069,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.3/vendor/jszip-utils.js"
               data-name="v0.5.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1079,7 +1079,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.2/vendor/jszip-utils.js"
               data-name="v0.5.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1089,7 +1089,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.1/vendor/jszip-utils.js"
               data-name="v0.5.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1099,7 +1099,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.5.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.5.0/vendor/jszip-utils.js"
               data-name="v0.5.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1109,7 +1109,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.8/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.8/vendor/jszip-utils.js"
               data-name="v0.4.8"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1119,7 +1119,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.7/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.7/vendor/jszip-utils.js"
               data-name="v0.4.7"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1129,7 +1129,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.6/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.6/vendor/jszip-utils.js"
               data-name="v0.4.6"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1139,7 +1139,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.5/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.5/vendor/jszip-utils.js"
               data-name="v0.4.5"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1149,7 +1149,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.4/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.4/vendor/jszip-utils.js"
               data-name="v0.4.4"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1159,7 +1159,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.3/vendor/jszip-utils.js"
               data-name="v0.4.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1169,7 +1169,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.2/vendor/jszip-utils.js"
               data-name="v0.4.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1179,7 +1179,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.1/vendor/jszip-utils.js"
               data-name="v0.4.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1189,7 +1189,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.4.0/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.4.0/vendor/jszip-utils.js"
               data-name="v0.4.0"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1199,7 +1199,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.3.3/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.3.3/vendor/jszip-utils.js"
               data-name="v0.3.3"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1209,7 +1209,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.3.2/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.3.2/vendor/jszip-utils.js"
               data-name="v0.3.2"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1219,7 +1219,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/v0.3.1/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/v0.3.1/vendor/jszip-utils.js"
               data-name="v0.3.1"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1229,7 +1229,7 @@
               </span>
             </a>
             <a class="select-menu-item js-navigation-item js-navigation-open "
-              href="/open-xml-templating/docxtemplater/tree/rm/vendor/file-saver.min.js"
+              href="/open-xml-templating/docxtemplater/tree/rm/vendor/jszip-utils.js"
               data-name="rm"
               data-skip-pjax="true"
               rel="nofollow">
@@ -1257,12 +1257,12 @@
     <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
   </div>
   <div class="breadcrumb js-zeroclipboard-target">
-    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/open-xml-templating/docxtemplater"><span>docxtemplater</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/open-xml-templating/docxtemplater/tree/master/vendor"><span>vendor</span></a></span><span class="separator">/</span><strong class="final-path">file-saver.min.js</strong>
+    <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/open-xml-templating/docxtemplater"><span>docxtemplater</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/open-xml-templating/docxtemplater/tree/master/vendor"><span>vendor</span></a></span><span class="separator">/</span><strong class="final-path">jszip-utils.js</strong>
   </div>
 </div>
 
 
-<include-fragment class="commit-tease" src="/open-xml-templating/docxtemplater/contributors/master/vendor/file-saver.min.js">
+<include-fragment class="commit-tease" src="/open-xml-templating/docxtemplater/contributors/master/vendor/jszip-utils.js">
   <div>
     Fetching contributors&hellip;
   </div>
@@ -1277,9 +1277,9 @@
   <div class="file-actions">
 
     <div class="BtnGroup">
-      <a href="/open-xml-templating/docxtemplater/raw/master/vendor/file-saver.min.js" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
-        <a href="/open-xml-templating/docxtemplater/blame/master/vendor/file-saver.min.js" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
-      <a href="/open-xml-templating/docxtemplater/commits/master/vendor/file-saver.min.js" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
+      <a href="/open-xml-templating/docxtemplater/raw/master/vendor/jszip-utils.js" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
+        <a href="/open-xml-templating/docxtemplater/blame/master/vendor/jszip-utils.js" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
+      <a href="/open-xml-templating/docxtemplater/commits/master/vendor/jszip-utils.js" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
     </div>
 
         <a class="btn-octicon tooltipped tooltipped-nw"
@@ -1289,12 +1289,12 @@
             <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
         </a>
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/edit/master/vendor/file-saver.min.js" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="orNwlA/1jOWQWPYU7xhzokrWDx/IMNzMT5Dj6JrM1Z0rfFgV0XcIR25bWYo+QH63qlHT8PNaq6w3ofCe+uSFew==" /></div>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/edit/master/vendor/jszip-utils.js" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="luNt3apX2M0eEuzLc7u7bLBC0vuhE3SXmhEQMGcNcEiESbEkyNPsT2WdLzMUcxsvgybozX2bv0DGNhCecibq7g==" /></div>
           <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
           </button>
-</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/delete/master/vendor/file-saver.min.js" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="wI/NakQKTobMFAxVcdWGNnAkzux2WSbXY4P8ikQf09ONt0CrBti/xzHsYVfeKsn6JbCqqKnpmYXQ8YxR8wvuiw==" /></div>
+</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/delete/master/vendor/jszip-utils.js" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="GcoPfzdwiPNl7Ky9RDHVxgQgkTyVVj1Bx4DiI2auLyTcGdL8KKbuh8cMlrtBN0K3s3sWndXmwWbVGdbgA9YruQ==" /></div>
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and delete the file" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -1302,9 +1302,9 @@
 </form>  </div>
 
   <div class="file-info">
-      7 lines (7 sloc)
+      119 lines (98 sloc)
       <span class="file-info-divider"></span>
-    2.78 KB
+    4.38 KB
   </div>
 </div>
 
@@ -1314,31 +1314,492 @@
       <table class="highlight tab-size js-file-line-container" data-tab-size="8">
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */</span></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">/*!</span></td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">var</span> saveAs<span class="pl-k">=</span>saveAs<span class="pl-k">||</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span><span class="pl-k">typeof</span> <span class="pl-c1">navigator</span><span class="pl-k">&amp;&amp;</span><span class="pl-c1">navigator</span>.<span class="pl-smi">msSaveOrOpenBlob</span><span class="pl-k">&amp;&amp;</span><span class="pl-c1">navigator</span>.<span class="pl-smi">msSaveOrOpenBlob</span>.<span class="pl-en">bind</span>(<span class="pl-c1">navigator</span>)<span class="pl-k">||</span><span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-s"><span class="pl-pds">&quot;</span>use strict<span class="pl-pds">&quot;</span></span>;<span class="pl-k">if</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">===</span><span class="pl-k">typeof</span> <span class="pl-c1">navigator</span><span class="pl-k">||!</span><span class="pl-sr"><span class="pl-pds">/</span>MSIE <span class="pl-c1">[<span class="pl-c1">1-9</span>]</span><span class="pl-cce">\.</span><span class="pl-pds">/</span></span>.<span class="pl-c1">test</span>(<span class="pl-c1">navigator</span>.<span class="pl-c1">userAgent</span>)){<span class="pl-k">var</span> k<span class="pl-k">=</span><span class="pl-smi">a</span>.<span class="pl-smi">document</span>,n<span class="pl-k">=</span><span class="pl-smi">k</span>.<span class="pl-c1">createElementNS</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>http://www.w3.org/1999/xhtml<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>a<span class="pl-pds">&quot;</span></span>),w<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>download<span class="pl-pds">&quot;</span></span><span class="pl-k">in</span> n,<span class="pl-en">x</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">c</span>){<span class="pl-k">var</span> e<span class="pl-k">=</span><span class="pl-smi">k</span>.<span class="pl-c1">createEvent</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>MouseEvents<span class="pl-pds">&quot;</span></span>);<span class="pl-smi">e</span>.<span class="pl-en">initMouseEvent</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>click<span class="pl-pds">&quot;</span></span>,<span class="pl-k">!</span><span class="pl-c1">0</span>,<span class="pl-k">!</span><span class="pl-c1">1</span>,a,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-k">!</span><span class="pl-c1">1</span>,<span class="pl-k">!</span><span class="pl-c1">1</span>,<span class="pl-k">!</span><span class="pl-c1">1</span>,<span class="pl-k">!</span><span class="pl-c1">1</span>,<span class="pl-c1">0</span>,<span class="pl-c1">null</span>);<span class="pl-smi">c</span>.<span class="pl-c1">dispatchEvent</span>(e)},q<span class="pl-k">=</span><span class="pl-smi">a</span>.<span class="pl-smi">webkitRequestFileSystem</span>,u<span class="pl-k">=</span><span class="pl-smi">a</span>.<span class="pl-smi">requestFileSystem</span><span class="pl-k">||</span>q<span class="pl-k">||</span><span class="pl-smi">a</span>.<span class="pl-smi">mozRequestFileSystem</span>,</td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"></span></td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-en">y</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">c</span>){(<span class="pl-smi">a</span>.<span class="pl-smi">setImmediate</span><span class="pl-k">||</span><span class="pl-smi">a</span>.<span class="pl-smi">setTimeout</span>)(<span class="pl-k">function</span>(){<span class="pl-k">throw</span> c;},<span class="pl-c1">0</span>)},r<span class="pl-k">=</span><span class="pl-c1">0</span>,<span class="pl-en">s</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">c</span>){<span class="pl-k">var</span> <span class="pl-en">e</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-s"><span class="pl-pds">&quot;</span>string<span class="pl-pds">&quot;</span></span><span class="pl-k">===</span><span class="pl-k">typeof</span> c<span class="pl-k">?</span>(<span class="pl-smi">a</span>.<span class="pl-c1">URL</span><span class="pl-k">||</span><span class="pl-smi">a</span>.<span class="pl-smi">webkitURL</span><span class="pl-k">||</span>a).<span class="pl-en">revokeObjectURL</span>(c)<span class="pl-k">:</span><span class="pl-smi">c</span>.<span class="pl-c1">remove</span>()};<span class="pl-smi">a</span>.<span class="pl-smi">chrome</span><span class="pl-k">?</span><span class="pl-en">e</span>()<span class="pl-k">:</span><span class="pl-c1">setTimeout</span>(e,<span class="pl-c1">10</span>)},<span class="pl-en">t</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">c</span>,<span class="pl-smi">a</span>,<span class="pl-smi">d</span>){a<span class="pl-k">=</span>[].<span class="pl-c1">concat</span>(a);<span class="pl-k">for</span>(<span class="pl-k">var</span> b<span class="pl-k">=</span><span class="pl-smi">a</span>.<span class="pl-c1">length</span>;b<span class="pl-k">--</span>;){<span class="pl-k">var</span> l<span class="pl-k">=</span>c[<span class="pl-s"><span class="pl-pds">&quot;</span>on<span class="pl-pds">&quot;</span></span><span class="pl-k">+</span>a[b]];<span class="pl-k">if</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>function<span class="pl-pds">&quot;</span></span><span class="pl-k">===</span><span class="pl-k">typeof</span> l)<span class="pl-k">try</span>{<span class="pl-smi">l</span>.<span class="pl-c1">call</span>(c,d<span class="pl-k">||</span>c)}<span class="pl-k">catch</span>(f){<span class="pl-en">y</span>(f)}}},<span class="pl-en">m</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">c</span>,<span class="pl-smi">e</span>){<span class="pl-k">var</span> d<span class="pl-k">=</span><span class="pl-c1">this</span>,b<span class="pl-k">=</span><span class="pl-smi">c</span>.<span class="pl-c1">type</span>,l<span class="pl-k">=</span><span class="pl-k">!</span><span class="pl-c1">1</span>,f,p,<span class="pl-en">k</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-en">t</span>(d,[<span class="pl-s"><span class="pl-pds">&quot;</span>writestart<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>progress<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>write<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>writeend<span class="pl-pds">&quot;</span></span>])},<span class="pl-en">g</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-k">if</span>(l<span class="pl-k">||!</span>f)f<span class="pl-k">=</span>(<span class="pl-smi">a</span>.<span class="pl-c1">URL</span><span class="pl-k">||</span><span class="pl-smi">a</span>.<span class="pl-smi">webkitURL</span><span class="pl-k">||</span></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c">JSZipUtils - A collection of cross-browser utilities to go along with JSZip.</span></td>
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line">a).<span class="pl-en">createObjectURL</span>(c);p<span class="pl-k">?</span><span class="pl-smi">p</span>.<span class="pl-c1">location</span>.<span class="pl-c1">href</span><span class="pl-k">=</span>f<span class="pl-k">:</span><span class="pl-k">void</span> <span class="pl-c1">0</span><span class="pl-k">==</span><span class="pl-smi">a</span>.<span class="pl-c1">open</span>(f,<span class="pl-s"><span class="pl-pds">&quot;</span>_blank<span class="pl-pds">&quot;</span></span>)<span class="pl-k">&amp;&amp;</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span><span class="pl-k">typeof</span> safari<span class="pl-k">&amp;&amp;</span>(<span class="pl-smi">a</span>.<span class="pl-c1">location</span>.<span class="pl-c1">href</span><span class="pl-k">=</span>f);<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">d</span>.<span class="pl-c1">DONE</span>;<span class="pl-en">k</span>();<span class="pl-en">s</span>(f)},<span class="pl-en">h</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-k">return</span> <span class="pl-k">function</span>(){<span class="pl-k">if</span>(<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">!==</span><span class="pl-smi">d</span>.<span class="pl-c1">DONE</span>)<span class="pl-k">return</span> <span class="pl-smi">a</span>.<span class="pl-c1">apply</span>(<span class="pl-c1">this</span>,<span class="pl-c1">arguments</span>)}},m<span class="pl-k">=</span>{create<span class="pl-k">:</span><span class="pl-k">!</span><span class="pl-c1">0</span>,exclusive<span class="pl-k">:</span><span class="pl-k">!</span><span class="pl-c1">1</span>},v;<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">d</span>.<span class="pl-c1">INIT</span>;e<span class="pl-k">||</span>(e<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>download<span class="pl-pds">&quot;</span></span>);<span class="pl-k">if</span>(w)f<span class="pl-k">=</span>(<span class="pl-smi">a</span>.<span class="pl-c1">URL</span><span class="pl-k">||</span><span class="pl-smi">a</span>.<span class="pl-smi">webkitURL</span><span class="pl-k">||</span>a).<span class="pl-en">createObjectURL</span>(c),<span class="pl-smi">n</span>.<span class="pl-c1">href</span><span class="pl-k">=</span>f,<span class="pl-smi">n</span>.<span class="pl-smi">download</span><span class="pl-k">=</span>e,<span class="pl-en">x</span>(n),<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">d</span>.<span class="pl-c1">DONE</span>,<span class="pl-en">k</span>(),<span class="pl-en">s</span>(f);<span class="pl-k">else</span>{<span class="pl-smi">a</span>.<span class="pl-smi">chrome</span><span class="pl-k">&amp;&amp;</span>b<span class="pl-k">&amp;&amp;</span><span class="pl-s"><span class="pl-pds">&quot;</span>application/octet-stream<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span>b<span class="pl-k">&amp;&amp;</span>(v<span class="pl-k">=</span><span class="pl-smi">c</span>.<span class="pl-smi">slice</span><span class="pl-k">||</span><span class="pl-smi">c</span>.<span class="pl-smi">webkitSlice</span>,c<span class="pl-k">=</span><span class="pl-smi">v</span>.<span class="pl-c1">call</span>(c,<span class="pl-c1">0</span>,</td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-c">&lt;http://stuk.github.io/jszip-utils&gt;</span></td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">c</span>.<span class="pl-c1">size</span>,<span class="pl-s"><span class="pl-pds">&quot;</span>application/octet-stream<span class="pl-pds">&quot;</span></span>),l<span class="pl-k">=</span><span class="pl-k">!</span><span class="pl-c1">0</span>);q<span class="pl-k">&amp;&amp;</span><span class="pl-s"><span class="pl-pds">&quot;</span>download<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span>e<span class="pl-k">&amp;&amp;</span>(e<span class="pl-k">+=</span><span class="pl-s"><span class="pl-pds">&quot;</span>.download<span class="pl-pds">&quot;</span></span>);<span class="pl-k">if</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>application/octet-stream<span class="pl-pds">&quot;</span></span><span class="pl-k">===</span>b<span class="pl-k">||</span>q)p<span class="pl-k">=</span>a;u<span class="pl-k">?</span>(r<span class="pl-k">+=</span><span class="pl-smi">c</span>.<span class="pl-c1">size</span>,<span class="pl-en">u</span>(<span class="pl-smi">a</span>.<span class="pl-c1">TEMPORARY</span>,r,<span class="pl-en">h</span>(<span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-smi">a</span>.<span class="pl-smi">root</span>.<span class="pl-en">getDirectory</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>saved<span class="pl-pds">&quot;</span></span>,m,<span class="pl-en">h</span>(<span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-k">var</span> <span class="pl-en">b</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-smi">a</span>.<span class="pl-en">getFile</span>(e,m,<span class="pl-en">h</span>(<span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-smi">a</span>.<span class="pl-en">createWriter</span>(<span class="pl-en">h</span>(<span class="pl-k">function</span>(<span class="pl-smi">b</span>){<span class="pl-smi">b</span>.<span class="pl-en">onwriteend</span><span class="pl-k">=</span><span class="pl-k">function</span>(<span class="pl-smi">b</span>){<span class="pl-smi">p</span>.<span class="pl-c1">location</span>.<span class="pl-c1">href</span><span class="pl-k">=</span><span class="pl-smi">a</span>.<span class="pl-en">toURL</span>();<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">d</span>.<span class="pl-c1">DONE</span>;<span class="pl-en">t</span>(d,<span class="pl-s"><span class="pl-pds">&quot;</span>writeend<span class="pl-pds">&quot;</span></span>,b);<span class="pl-en">s</span>(a)};<span class="pl-smi">b</span>.<span class="pl-en">onerror</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-k">var</span> a<span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">error</span>;<span class="pl-smi">a</span>.<span class="pl-c1">code</span><span class="pl-k">!==</span><span class="pl-smi">a</span>.<span class="pl-c1">ABORT_ERR</span><span class="pl-k">&amp;&amp;</span><span class="pl-en">g</span>()};[<span class="pl-s"><span class="pl-pds">&quot;</span>writestart<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>progress<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>write<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>abort<span class="pl-pds">&quot;</span></span>].<span class="pl-c1">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">a</span>){b[<span class="pl-s"><span class="pl-pds">&quot;</span>on<span class="pl-pds">&quot;</span></span><span class="pl-k">+</span></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"></span></td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line">a]<span class="pl-k">=</span>d[<span class="pl-s"><span class="pl-pds">&quot;</span>on<span class="pl-pds">&quot;</span></span><span class="pl-k">+</span>a]});<span class="pl-smi">b</span>.<span class="pl-c1">write</span>(c);<span class="pl-smi">d</span>.<span class="pl-en">abort</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-smi">b</span>.<span class="pl-c1">abort</span>();<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">d</span>.<span class="pl-c1">DONE</span>};<span class="pl-smi">d</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">d</span>.<span class="pl-c1">WRITING</span>}),g)}),g)};<span class="pl-smi">a</span>.<span class="pl-en">getFile</span>(e,{create<span class="pl-k">:</span><span class="pl-k">!</span><span class="pl-c1">1</span>},<span class="pl-en">h</span>(<span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-smi">a</span>.<span class="pl-c1">remove</span>();<span class="pl-en">b</span>()}),<span class="pl-en">h</span>(<span class="pl-k">function</span>(<span class="pl-smi">a</span>){<span class="pl-smi">a</span>.<span class="pl-c1">code</span><span class="pl-k">===</span><span class="pl-smi">a</span>.<span class="pl-c1">NOT_FOUND_ERR</span><span class="pl-k">?</span><span class="pl-en">b</span>()<span class="pl-k">:</span><span class="pl-en">g</span>()}))}),g)}),g))<span class="pl-k">:</span><span class="pl-en">g</span>()}},b<span class="pl-k">=</span><span class="pl-smi">m</span>.<span class="pl-c1">prototype</span>;<span class="pl-smi">b</span>.<span class="pl-en">abort</span><span class="pl-k">=</span><span class="pl-k">function</span>(){<span class="pl-c1">this</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-c1">this</span>.<span class="pl-c1">DONE</span>;<span class="pl-en">t</span>(<span class="pl-c1">this</span>,<span class="pl-s"><span class="pl-pds">&quot;</span>abort<span class="pl-pds">&quot;</span></span>)};<span class="pl-smi">b</span>.<span class="pl-c1">readyState</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-c1">INIT</span><span class="pl-k">=</span><span class="pl-c1">0</span>;<span class="pl-smi">b</span>.<span class="pl-c1">WRITING</span><span class="pl-k">=</span><span class="pl-c1">1</span>;<span class="pl-smi">b</span>.<span class="pl-c1">DONE</span><span class="pl-k">=</span><span class="pl-c1">2</span>;<span class="pl-smi">b</span>.<span class="pl-smi">error</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">onwritestart</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">onprogress</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">onwrite</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">onabort</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">onerror</span><span class="pl-k">=</span><span class="pl-smi">b</span>.<span class="pl-smi">onwriteend</span><span class="pl-k">=</span><span class="pl-c1">null</span>;<span class="pl-k">return</span> <span class="pl-k">function</span>(<span class="pl-smi">a</span>,<span class="pl-smi">b</span>){<span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">m</span>(a,b)}}}(<span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span><span class="pl-k">typeof</span> self<span class="pl-k">&amp;&amp;</span></td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-c">(c) 2014 Stuart Knightley, David Duponchel</span></td>
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line">self<span class="pl-k">||</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span><span class="pl-k">typeof</span> <span class="pl-c1">window</span><span class="pl-k">&amp;&amp;</span><span class="pl-c1">window</span><span class="pl-k">||</span><span class="pl-c1">this</span>.<span class="pl-c1">content</span>);<span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span><span class="pl-k">typeof</span> <span class="pl-c1">module</span><span class="pl-k">&amp;&amp;</span><span class="pl-c1">null</span><span class="pl-k">!==</span><span class="pl-c1">module</span><span class="pl-k">?</span><span class="pl-c1">module</span>.<span class="pl-smi">exports</span><span class="pl-k">=</span>saveAs<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!==</span><span class="pl-k">typeof</span> define<span class="pl-k">&amp;&amp;</span><span class="pl-c1">null</span><span class="pl-k">!==</span>define<span class="pl-k">&amp;&amp;</span><span class="pl-c1">null</span><span class="pl-k">!=</span><span class="pl-smi">define</span>.<span class="pl-smi">amd</span><span class="pl-k">&amp;&amp;</span><span class="pl-en">define</span>([],<span class="pl-k">function</span>(){<span class="pl-k">return</span> saveAs});</td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-c">Dual licenced under the MIT license or GPLv3. See https://raw.github.com/Stuk/jszip-utils/master/LICENSE.markdown.</span></td>
+      </tr>
+      <tr>
+        <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"></span></td>
+      </tr>
+      <tr>
+        <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-c">*/</span></td>
+      </tr>
+      <tr>
+        <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-k">!</span><span class="pl-k">function</span>(<span class="pl-smi">e</span>){<span class="pl-s"><span class="pl-pds">&quot;</span>object<span class="pl-pds">&quot;</span></span><span class="pl-k">==</span><span class="pl-k">typeof</span> <span class="pl-c1">exports</span><span class="pl-k">?</span><span class="pl-c1">module</span>.<span class="pl-smi">exports</span><span class="pl-k">=</span><span class="pl-en">e</span>()<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>function<span class="pl-pds">&quot;</span></span><span class="pl-k">==</span><span class="pl-k">typeof</span> define<span class="pl-k">&amp;&amp;</span><span class="pl-smi">define</span>.<span class="pl-smi">amd</span><span class="pl-k">?</span><span class="pl-en">define</span>(e)<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!=</span><span class="pl-k">typeof</span> <span class="pl-c1">window</span><span class="pl-k">?</span><span class="pl-c1">window</span>.<span class="pl-smi">JSZipUtils</span><span class="pl-k">=</span><span class="pl-en">e</span>()<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!=</span><span class="pl-k">typeof</span> <span class="pl-c1">global</span><span class="pl-k">?</span><span class="pl-c1">global</span>.<span class="pl-smi">JSZipUtils</span><span class="pl-k">=</span><span class="pl-en">e</span>()<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span><span class="pl-k">!=</span><span class="pl-k">typeof</span> self<span class="pl-k">&amp;&amp;</span>(<span class="pl-smi">self</span>.<span class="pl-smi">JSZipUtils</span><span class="pl-k">=</span><span class="pl-en">e</span>())}(<span class="pl-k">function</span>(){<span class="pl-k">var</span> define,<span class="pl-c1">module</span>,<span class="pl-c1">exports</span>;<span class="pl-k">return</span> (<span class="pl-k">function</span> <span class="pl-en">e</span>(<span class="pl-smi">t</span>,<span class="pl-smi">n</span>,<span class="pl-smi">r</span>){<span class="pl-k">function</span> <span class="pl-en">s</span>(<span class="pl-smi">o</span>,<span class="pl-smi">u</span>){<span class="pl-k">if</span>(<span class="pl-k">!</span>n[o]){<span class="pl-k">if</span>(<span class="pl-k">!</span>t[o]){<span class="pl-k">var</span> a<span class="pl-k">=</span><span class="pl-k">typeof</span> require<span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>function<span class="pl-pds">&quot;</span></span><span class="pl-k">&amp;&amp;</span>require;<span class="pl-k">if</span>(<span class="pl-k">!</span>u<span class="pl-k">&amp;&amp;</span>a)<span class="pl-k">return</span> <span class="pl-en">a</span>(o,<span class="pl-k">!</span><span class="pl-c1">0</span>);<span class="pl-k">if</span>(i)<span class="pl-k">return</span> <span class="pl-en">i</span>(o,<span class="pl-k">!</span><span class="pl-c1">0</span>);<span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-en">Error</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Cannot find module &#39;<span class="pl-pds">&quot;</span></span><span class="pl-k">+</span>o<span class="pl-k">+</span><span class="pl-s"><span class="pl-pds">&quot;</span>&#39;<span class="pl-pds">&quot;</span></span>)}<span class="pl-k">var</span> f<span class="pl-k">=</span>n[o]<span class="pl-k">=</span>{exports<span class="pl-k">:</span>{}};t[o][<span class="pl-c1">0</span>].<span class="pl-c1">call</span>(<span class="pl-smi">f</span>.<span class="pl-smi">exports</span>,<span class="pl-k">function</span>(<span class="pl-smi">e</span>){<span class="pl-k">var</span> n<span class="pl-k">=</span>t[o][<span class="pl-c1">1</span>][e];<span class="pl-k">return</span> <span class="pl-en">s</span>(n<span class="pl-k">?</span>n<span class="pl-k">:</span>e)},f,<span class="pl-smi">f</span>.<span class="pl-smi">exports</span>,e,t,n,r)}<span class="pl-k">return</span> n[o].<span class="pl-smi">exports</span>}<span class="pl-k">var</span> i<span class="pl-k">=</span><span class="pl-k">typeof</span> require<span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">&quot;</span>function<span class="pl-pds">&quot;</span></span><span class="pl-k">&amp;&amp;</span>require;<span class="pl-k">for</span>(<span class="pl-k">var</span> o<span class="pl-k">=</span><span class="pl-c1">0</span>;o<span class="pl-k">&lt;</span><span class="pl-smi">r</span>.<span class="pl-c1">length</span>;o<span class="pl-k">++</span>)<span class="pl-en">s</span>(r[o]);<span class="pl-k">return</span> s})({<span class="pl-c1">1</span><span class="pl-k">:</span>[<span class="pl-k">function</span>(<span class="pl-smi">require</span>,<span class="pl-c1">module</span>,<span class="pl-c1">exports</span>){</td>
+      </tr>
+      <tr>
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s"><span class="pl-pds">&#39;</span>use strict<span class="pl-pds">&#39;</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-k">var</span> JSZipUtils <span class="pl-k">=</span> {};</td>
+      </tr>
+      <tr>
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> just use the responseText with xhr1, response with xhr2.</span></td>
+      </tr>
+      <tr>
+        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> The transformation doesn&#39;t throw away high-order byte (with responseText)</span></td>
+      </tr>
+      <tr>
+        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> because JSZip handles that case. If not used with JSZip, you may need to</span></td>
+      </tr>
+      <tr>
+        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> do it, see https://developer.mozilla.org/En/Using_XMLHttpRequest#Handling_binary_data</span></td>
+      </tr>
+      <tr>
+        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">JSZipUtils</span>.<span class="pl-en">_getBinaryFromXHR</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-smi">xhr</span>) {</td>
+      </tr>
+      <tr>
+        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span> for xhr.responseText, the 0xFF mask is applied by JSZip</span></td>
+      </tr>
+      <tr>
+        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> <span class="pl-smi">xhr</span>.<span class="pl-smi">response</span> <span class="pl-k">||</span> <span class="pl-smi">xhr</span>.<span class="pl-c1">responseText</span>;</td>
+      </tr>
+      <tr>
+        <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line">};</td>
+      </tr>
+      <tr>
+        <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> taken from jQuery</span></td>
+      </tr>
+      <tr>
+        <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-k">function</span> <span class="pl-en">createStandardXHR</span>() {</td>
+      </tr>
+      <tr>
+        <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">try</span> {</td>
+      </tr>
+      <tr>
+        <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">window.XMLHttpRequest</span>();</td>
+      </tr>
+      <tr>
+        <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">    } <span class="pl-k">catch</span>( e ) {}</td>
+      </tr>
+      <tr>
+        <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-k">function</span> <span class="pl-en">createActiveXHR</span>() {</td>
+      </tr>
+      <tr>
+        <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">try</span> {</td>
+      </tr>
+      <tr>
+        <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">window.ActiveXObject</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Microsoft.XMLHTTP<span class="pl-pds">&quot;</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="LC33" class="blob-code blob-code-inner js-file-line">    } <span class="pl-k">catch</span>( e ) {}</td>
+      </tr>
+      <tr>
+        <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="LC34" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="LC35" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> Create the request object</span></td>
+      </tr>
+      <tr>
+        <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="LC37" class="blob-code blob-code-inner js-file-line"><span class="pl-k">var</span> createXHR <span class="pl-k">=</span> <span class="pl-c1">window</span>.<span class="pl-smi">ActiveXObject</span> <span class="pl-k">?</span></td>
+      </tr>
+      <tr>
+        <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="LC38" class="blob-code blob-code-inner js-file-line">    <span class="pl-c">/* Microsoft failed to properly</span></td>
+      </tr>
+      <tr>
+        <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="LC39" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * implement the XMLHttpRequest in IE7 (can&#39;t request local files),</span></td>
+      </tr>
+      <tr>
+        <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="LC40" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * so we use the ActiveXObject when it is available</span></td>
+      </tr>
+      <tr>
+        <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="LC41" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * Additionally XMLHttpRequest can be disabled in IE7/IE8 so</span></td>
+      </tr>
+      <tr>
+        <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="LC42" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * we need a fallback.</span></td>
+      </tr>
+      <tr>
+        <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="LC43" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     */</span></td>
+      </tr>
+      <tr>
+        <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="LC44" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">function</span>() {</td>
+      </tr>
+      <tr>
+        <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="LC45" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">return</span> <span class="pl-en">createStandardXHR</span>() <span class="pl-k">||</span> <span class="pl-en">createActiveXHR</span>();</td>
+      </tr>
+      <tr>
+        <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="LC46" class="blob-code blob-code-inner js-file-line">} <span class="pl-k">:</span></td>
+      </tr>
+      <tr>
+        <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="LC47" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span> For all other browsers, use the standard XMLHttpRequest object</span></td>
+      </tr>
+      <tr>
+        <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="LC48" class="blob-code blob-code-inner js-file-line">    createStandardXHR;</td>
+      </tr>
+      <tr>
+        <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="LC49" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="LC50" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="LC51" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="LC52" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">JSZipUtils</span>.<span class="pl-en">getBinaryContent</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">path</span>, <span class="pl-smi">callback</span>) {</td>
+      </tr>
+      <tr>
+        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="LC53" class="blob-code blob-code-inner js-file-line">    <span class="pl-c">/*</span></td>
+      </tr>
+      <tr>
+        <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="LC54" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * Here is the tricky part : getting the data.</span></td>
+      </tr>
+      <tr>
+        <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="LC55" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * In firefox/chrome/opera/... setting the mimeType to &#39;text/plain; charset=x-user-defined&#39;</span></td>
+      </tr>
+      <tr>
+        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="LC56" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * is enough, the result is in the standard xhr.responseText.</span></td>
+      </tr>
+      <tr>
+        <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="LC57" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * cf https://developer.mozilla.org/En/XMLHttpRequest/Using_XMLHttpRequest#Receiving_binary_data_in_older_browsers</span></td>
+      </tr>
+      <tr>
+        <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="LC58" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * In IE &lt;= 9, we must use (the IE only) attribute responseBody</span></td>
+      </tr>
+      <tr>
+        <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="LC59" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * (for binary data, its content is different from responseText).</span></td>
+      </tr>
+      <tr>
+        <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="LC60" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * In IE 10, the &#39;charset=x-user-defined&#39; trick doesn&#39;t work, only the</span></td>
+      </tr>
+      <tr>
+        <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="LC61" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * responseType will work :</span></td>
+      </tr>
+      <tr>
+        <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="LC62" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * http://msdn.microsoft.com/en-us/library/ie/hh673569%28v=vs.85%29.aspx#Binary_Object_upload_and_download</span></td>
+      </tr>
+      <tr>
+        <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="LC63" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     *</span></td>
+      </tr>
+      <tr>
+        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="LC64" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * I&#39;d like to use jQuery to avoid this XHR madness, but it doesn&#39;t support</span></td>
+      </tr>
+      <tr>
+        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="LC65" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     * the responseType attribute : http://bugs.jquery.com/ticket/11461</span></td>
+      </tr>
+      <tr>
+        <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="LC66" class="blob-code blob-code-inner js-file-line"><span class="pl-c">     */</span></td>
+      </tr>
+      <tr>
+        <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="LC67" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">try</span> {</td>
+      </tr>
+      <tr>
+        <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="LC68" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="LC69" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">var</span> xhr <span class="pl-k">=</span> <span class="pl-en">createXHR</span>();</td>
+      </tr>
+      <tr>
+        <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="LC70" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L71" class="blob-num js-line-number" data-line-number="71"></td>
+        <td id="LC71" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">xhr</span>.<span class="pl-c1">open</span>(<span class="pl-s"><span class="pl-pds">&#39;</span>GET<span class="pl-pds">&#39;</span></span>, path, <span class="pl-c1">true</span>);</td>
+      </tr>
+      <tr>
+        <td id="L72" class="blob-num js-line-number" data-line-number="72"></td>
+        <td id="LC72" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L73" class="blob-num js-line-number" data-line-number="73"></td>
+        <td id="LC73" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> recent browsers</span></td>
+      </tr>
+      <tr>
+        <td id="L74" class="blob-num js-line-number" data-line-number="74"></td>
+        <td id="LC74" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span> (<span class="pl-s"><span class="pl-pds">&quot;</span>responseType<span class="pl-pds">&quot;</span></span> <span class="pl-k">in</span> xhr) {</td>
+      </tr>
+      <tr>
+        <td id="L75" class="blob-num js-line-number" data-line-number="75"></td>
+        <td id="LC75" class="blob-code blob-code-inner js-file-line">            <span class="pl-smi">xhr</span>.<span class="pl-smi">responseType</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>arraybuffer<span class="pl-pds">&quot;</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="L76" class="blob-num js-line-number" data-line-number="76"></td>
+        <td id="LC76" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="L77" class="blob-num js-line-number" data-line-number="77"></td>
+        <td id="LC77" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L78" class="blob-num js-line-number" data-line-number="78"></td>
+        <td id="LC78" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span> older browser</span></td>
+      </tr>
+      <tr>
+        <td id="L79" class="blob-num js-line-number" data-line-number="79"></td>
+        <td id="LC79" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(<span class="pl-smi">xhr</span>.<span class="pl-smi">overrideMimeType</span>) {</td>
+      </tr>
+      <tr>
+        <td id="L80" class="blob-num js-line-number" data-line-number="80"></td>
+        <td id="LC80" class="blob-code blob-code-inner js-file-line">            <span class="pl-smi">xhr</span>.<span class="pl-en">overrideMimeType</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>text/plain; charset=x-user-defined<span class="pl-pds">&quot;</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="L81" class="blob-num js-line-number" data-line-number="81"></td>
+        <td id="LC81" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="L82" class="blob-num js-line-number" data-line-number="82"></td>
+        <td id="LC82" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L83" class="blob-num js-line-number" data-line-number="83"></td>
+        <td id="LC83" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">xhr</span>.<span class="pl-en">onreadystatechange</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">evt</span>) {</td>
+      </tr>
+      <tr>
+        <td id="L84" class="blob-num js-line-number" data-line-number="84"></td>
+        <td id="LC84" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">var</span> file, err;</td>
+      </tr>
+      <tr>
+        <td id="L85" class="blob-num js-line-number" data-line-number="85"></td>
+        <td id="LC85" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span> use `xhr` and not `this`... thanks IE</span></td>
+      </tr>
+      <tr>
+        <td id="L86" class="blob-num js-line-number" data-line-number="86"></td>
+        <td id="LC86" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">if</span> (<span class="pl-smi">xhr</span>.<span class="pl-c1">readyState</span> <span class="pl-k">===</span> <span class="pl-c1">4</span>) {</td>
+      </tr>
+      <tr>
+        <td id="L87" class="blob-num js-line-number" data-line-number="87"></td>
+        <td id="LC87" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">if</span> (<span class="pl-smi">xhr</span>.<span class="pl-c1">status</span> <span class="pl-k">===</span> <span class="pl-c1">200</span> <span class="pl-k">||</span> <span class="pl-smi">xhr</span>.<span class="pl-c1">status</span> <span class="pl-k">===</span> <span class="pl-c1">0</span>) {</td>
+      </tr>
+      <tr>
+        <td id="L88" class="blob-num js-line-number" data-line-number="88"></td>
+        <td id="LC88" class="blob-code blob-code-inner js-file-line">                    file <span class="pl-k">=</span> <span class="pl-c1">null</span>;</td>
+      </tr>
+      <tr>
+        <td id="L89" class="blob-num js-line-number" data-line-number="89"></td>
+        <td id="LC89" class="blob-code blob-code-inner js-file-line">                    err <span class="pl-k">=</span> <span class="pl-c1">null</span>;</td>
+      </tr>
+      <tr>
+        <td id="L90" class="blob-num js-line-number" data-line-number="90"></td>
+        <td id="LC90" class="blob-code blob-code-inner js-file-line">                    <span class="pl-k">try</span> {</td>
+      </tr>
+      <tr>
+        <td id="L91" class="blob-num js-line-number" data-line-number="91"></td>
+        <td id="LC91" class="blob-code blob-code-inner js-file-line">                        file <span class="pl-k">=</span> <span class="pl-smi">JSZipUtils</span>.<span class="pl-en">_getBinaryFromXHR</span>(xhr);</td>
+      </tr>
+      <tr>
+        <td id="L92" class="blob-num js-line-number" data-line-number="92"></td>
+        <td id="LC92" class="blob-code blob-code-inner js-file-line">                    } <span class="pl-k">catch</span>(e) {</td>
+      </tr>
+      <tr>
+        <td id="L93" class="blob-num js-line-number" data-line-number="93"></td>
+        <td id="LC93" class="blob-code blob-code-inner js-file-line">                        err <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Error</span>(e);</td>
+      </tr>
+      <tr>
+        <td id="L94" class="blob-num js-line-number" data-line-number="94"></td>
+        <td id="LC94" class="blob-code blob-code-inner js-file-line">                    }</td>
+      </tr>
+      <tr>
+        <td id="L95" class="blob-num js-line-number" data-line-number="95"></td>
+        <td id="LC95" class="blob-code blob-code-inner js-file-line">                    <span class="pl-en">callback</span>(err, file);</td>
+      </tr>
+      <tr>
+        <td id="L96" class="blob-num js-line-number" data-line-number="96"></td>
+        <td id="LC96" class="blob-code blob-code-inner js-file-line">                } <span class="pl-k">else</span> {</td>
+      </tr>
+      <tr>
+        <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
+        <td id="LC97" class="blob-code blob-code-inner js-file-line">                    <span class="pl-en">callback</span>(<span class="pl-k">new</span> <span class="pl-en">Error</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Ajax error for <span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> path <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">&quot;</span> : <span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">status</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">&quot;</span> <span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> <span class="pl-c1">this</span>.<span class="pl-c1">statusText</span>), <span class="pl-c1">null</span>);</td>
+      </tr>
+      <tr>
+        <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
+        <td id="LC98" class="blob-code blob-code-inner js-file-line">                }</td>
+      </tr>
+      <tr>
+        <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
+        <td id="LC99" class="blob-code blob-code-inner js-file-line">            }</td>
+      </tr>
+      <tr>
+        <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
+        <td id="LC100" class="blob-code blob-code-inner js-file-line">        };</td>
+      </tr>
+      <tr>
+        <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
+        <td id="LC101" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
+        <td id="LC102" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">xhr</span>.<span class="pl-c1">send</span>();</td>
+      </tr>
+      <tr>
+        <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
+        <td id="LC103" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
+        <td id="LC104" class="blob-code blob-code-inner js-file-line">    } <span class="pl-k">catch</span> (e) {</td>
+      </tr>
+      <tr>
+        <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
+        <td id="LC105" class="blob-code blob-code-inner js-file-line">        <span class="pl-en">callback</span>(<span class="pl-k">new</span> <span class="pl-en">Error</span>(e), <span class="pl-c1">null</span>);</td>
+      </tr>
+      <tr>
+        <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
+        <td id="LC106" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
+        <td id="LC107" class="blob-code blob-code-inner js-file-line">};</td>
+      </tr>
+      <tr>
+        <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
+        <td id="LC108" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
+        <td id="LC109" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> export</span></td>
+      </tr>
+      <tr>
+        <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
+        <td id="LC110" class="blob-code blob-code-inner js-file-line"><span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> JSZipUtils;</td>
+      </tr>
+      <tr>
+        <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
+        <td id="LC111" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
+        <td id="LC112" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> enforcing Stuk&#39;s coding style</span></td>
+      </tr>
+      <tr>
+        <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
+        <td id="LC113" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> vim: set shiftwidth=4 softtabstop=4:</span></td>
+      </tr>
+      <tr>
+        <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
+        <td id="LC114" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
+        <td id="LC115" class="blob-code blob-code-inner js-file-line">},{}]},{},[<span class="pl-c1">1</span>])</td>
+      </tr>
+      <tr>
+        <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
+        <td id="LC116" class="blob-code blob-code-inner js-file-line">(<span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
+        <td id="LC117" class="blob-code blob-code-inner js-file-line">});</td>
+      </tr>
+      <tr>
+        <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
+        <td id="LC118" class="blob-code blob-code-inner js-file-line">;</td>
       </tr>
 </table>
 
@@ -1381,7 +1842,7 @@
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2017 <span title="0.17858s from github-fe144-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2017 <span title="0.20064s from github-fe163-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
@@ -1405,8 +1866,8 @@
 
 
     <script crossorigin="anonymous" integrity="sha256-ikMY/+oJoM24IUt2zykmufagztMYoxe+1BnbGSFMaQ0=" src="https://assets-cdn.github.com/assets/compat-8a4318ffea09a0cdb8214b76cf2926b9f6a0ced318a317bed419db19214c690d.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-1JosuxdBEU79W/hETstbtbhd0VQHsJR9mShSb0smv/g=" src="https://assets-cdn.github.com/assets/frameworks-d49a2cbb1741114efd5bf8444ecb5bb5b85dd15407b0947d9928526f4b26bff8.js"></script>
-    <script async="async" crossorigin="anonymous" integrity="sha256-GAuTlp7HyxDDeWvIlDD1601HNqLiqaiAJJZv1W/ZRuc=" src="https://assets-cdn.github.com/assets/github-180b93969ec7cb10c3796bc89430f5eb4d4736a2e2a9a88024966fd56fd946e7.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-bRCeda2EcbpBUIJybADDX7kpzquXUIJJKDXxHsqMB9k=" src="https://assets-cdn.github.com/assets/frameworks-6d109e75ad8471ba415082726c00c35fb929ceab975082492835f11eca8c07d9.js"></script>
+    <script async="async" crossorigin="anonymous" integrity="sha256-JiDIsEmU1dbRJxibf8h4aUpt6hLCwxb+4W7ndRV+vEA=" src="https://assets-cdn.github.com/assets/github-2620c8b04994d5d6d127189b7fc878694a6dea12c2c316fee16ee775157ebc40.js"></script>
     
     
     

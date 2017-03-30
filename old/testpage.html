@@ -1,0 +1,23 @@
+<html><body>
+<script src="build/docxtemplater.js"></script>
+<script src="vendor/FileSaver.min.js"></script>
+<script src="vendor/jszip-utils.js"></script>
+<script>
+var loadFile = function(url,callback) {
+    JSZipUtils.getBinaryContent(url,callback);
+}
+loadFile("examples/tagExample.docx", function(err, content) {
+    if (err) { throw e };
+    doc = new Docxtemplater(content);
+    doc.setData({
+        "first_name": "Hipp",
+        "last_name": "Edgar",
+        "phone": "0652455478",
+        "description": "New Website"
+    }); //set the templateVariables
+    doc.render(); //apply them (replace all occurences of {first_name} by Hipp, ...)
+    out=doc.getZip().generate({type:"blob"}); //Output the document using Data-URI
+    saveAs(out,"output.docx");
+});
+</script>
+</body></html>

@@ -12,7 +12,7 @@
 
 
   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-5b61aadc846f0818981ceec31b49c475fb084c163fdec5efbc2c21ef539092a9.css" integrity="sha256-W2Gq3IRvCBiYHO7DG0nEdfsITBY/3sXvvCwh71OQkqk=" media="all" rel="stylesheet" />
-  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-c9c526463f5ffa74c1d350222904e12065e085b6bd4597c9a7b141dd53e24733.css" integrity="sha256-ycUmRj9f+nTB01AiKQThIGXghba9RZfJp7FB3VPiRzM=" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-0c02870dc9ba1c994e29151ec7c3d80007b73ed85f616f5bae5e5e5a2eb2e292.css" integrity="sha256-DAKHDcm6HJlOKRUex8PYAAe3PthfYW9brl5eWi6y4pI=" media="all" rel="stylesheet" />
   
   
   
@@ -29,10 +29,10 @@
     <meta content="https://avatars0.githubusercontent.com/u/11191156?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="open-xml-templating/docxtemplater" property="og:title" /><meta content="https://github.com/open-xml-templating/docxtemplater" property="og:url" /><meta content="Generate docx and pptx (microsoft word documents) from templates, from Node.js, the Browser and the command line / Demo: http://javascript-ninja.fr/docxtemplater/v3/examples/demo.html" property="og:description" />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTU5NzE4ODYwOmMyNTI1OTNkOTZmMTE5NzI1NWFkYzNjNDQwYjU5ZWZiOGY2MGNlODgzODM0YjdhOGYzZGEyNjhmMTVkYjJlNTE=--dc7926fe01755d33a723dd78a2b83ab10e011907">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTU5NzE4ODYwOmJlNWFkM2Y5NjgwZTA3MGE5MmY2MTU3OGQ2NDlkZDJlMGJmNjEzODgxZTg5MGZhY2RjNTEzNTBmNjlkNDk1MTc=--eb035a4d0099d6e172e7b0604b9fa18cf0654247">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="EEBD:1A122:726C87:BA4FD1:58D9F4EB" data-pjax-transient>
+  <meta name="request-id" content="FB4F:BD3E:AADD67:1130A15:58DC2A95" data-pjax-transient>
   
 
   <meta name="selected-link" value="repo_source" data-pjax-transient>
@@ -41,7 +41,7 @@
 <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="EEBD:1A122:726C87:BA4FD1:58D9F4EB" name="octolytics-dimension-request_id" /><meta content="21273320" name="octolytics-actor-id" /><meta content="enegence" name="octolytics-actor-login" /><meta content="4cee8a1da8322d6e28036e21ca28e23f3d5054ac05c2895235492c19687e8395" name="octolytics-actor-hash" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="FB4F:BD3E:AADD67:1130A15:58DC2A95" name="octolytics-dimension-request_id" /><meta content="21273320" name="octolytics-actor-id" /><meta content="enegence" name="octolytics-actor-login" /><meta content="4cee8a1da8322d6e28036e21ca28e23f3d5054ac05c2895235492c19687e8395" name="octolytics-actor-hash" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
@@ -56,12 +56,12 @@
   <meta name="user-login" content="enegence">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="NjQwMmIwOWU2ODAxOGUzMWMxMGZjZTI2ZWE1ZTcxNmY2Njc5N2ZkMzNiMmU5NDVmNzMwY2Y1ZGJhYjJlMzQzM3x7InJlbW90ZV9hZGRyZXNzIjoiNDUuMjIuMTA1LjM3IiwicmVxdWVzdF9pZCI6IkVFQkQ6MUExMjI6NzI2Qzg3OkJBNEZEMTo1OEQ5RjRFQiIsInRpbWVzdGFtcCI6MTQ5MDY3OTAyMCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+    <meta name="js-proxy-site-detection-payload" content="NTdjN2NhYjg2YjAzYWVjZmQ3MmFhMDhlMzcxMTE0MTkxNWQyMzJlMGNjYmE5YTAyODNmOWRmYjU5ZDgwYzA2Y3x7InJlbW90ZV9hZGRyZXNzIjoiNDUuMjIuMTA1LjM3IiwicmVxdWVzdF9pZCI6IkZCNEY6QkQzRTpBQURENjc6MTEzMEExNTo1OERDMkE5NSIsInRpbWVzdGFtcCI6MTQ5MDgyMzgyOSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
 
   <meta name="html-safe-nonce" content="71be2722741a1e985dfee52dfd3f869eb2c7ed7d">
 
-  <meta http-equiv="x-pjax-version" content="8567529326e069382fdf44816c65dc75">
+  <meta http-equiv="x-pjax-version" content="34a3c3336c013801d1b1d41887845184">
   
 
     
@@ -230,7 +230,7 @@
           Settings
         </a>
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="sDzU8ZP/5I+97I3I4ig9XrYfLZHEj14O+5inSA2bNKy7/ESDTbKDKuBb3Tz1eIoxhZC1nVuGm/NX58bqjJPrWA==" /></div>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="daMz2ICDtDucxV1OSJn3rYg6qDZNreXzbnG4n+axagp+Y6OqXs7TnsFyDbpfyUDCu7UwOtKkIA7CDtk9Z7m1/g==" /></div>
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -240,7 +240,7 @@
 </ul>
 
 
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="S5KcG8zJ+Q1ySuKH6jFKIPLr4z+g6/a8f9hqiznR/WZAUgxpEoSeqC/9snP9Yf1PwWR7Mz/iM0HTpwspuNkikg==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="/+ikpNzDwDdE1MH5CaNk2JjPpusevCuHj1TG2ON+Nxz0KDTWAo6nkhljkQ0e89O3q0A+54G17nojK6d6Ynbo6A==" /></div>
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
         Sign out
       </button>
@@ -272,7 +272,7 @@
 
       <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UsQTnXkNKxae3pPVjNHIuUWbpkEBJ51aEovTAFKL8HGu7sWUtNAZwnu5fnipOy3T/1ftmH9ucVoLb8OuKdVK9g==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="10098528" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="lpX/oSbbdshDCkFs0IuDF7COHBwbEBK9+TeYlov/Hz5qvymo6wZEHKZtrMH1YWZ9CkJXxWVZ/r3g04g48KGluQ==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="10098528" />
 
         <div class="select-menu js-menu-container js-select-menu">
           <a href="/open-xml-templating/docxtemplater/subscription"
@@ -347,7 +347,7 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="pWN1W5sdzPC3QQy+k7oblchrpx2G9/MhvBq1zBzooWJ+bDlzD7mOU2oqwL+Sv0kISGuNtTQ+V1riOVFbtwAi5w==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="KS+m511Csd8yG/qHqMn4MJcf3RCWeztfRZvEv1+sJpPyIOrPyebzfO9wNoapzKqtFx/3uCSynyQbuCAo9ESlFg==" /></div>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
@@ -357,11 +357,11 @@
         Unstar
       </button>
         <a class="social-count js-social-count" href="/open-xml-templating/docxtemplater/stargazers"
-           aria-label="547 users starred this repository">
-          547
+           aria-label="550 users starred this repository">
+          550
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="J1jsJW+pO+EuKqSPX6UohTsWCNIpeN5Gyxfg8XtYwuCTZYeZf8vVnbOsFBcl3xj6zTF3MlMsPyZr76RHv1cOIA==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NVjnVRp0MGncpl/5aCUwofW4ACnzU98QI0kG8eZ+dNeBZYzpChbeFUEg72ESXwDeA59/yYkHPnCDsUJHInG4Fw==" /></div>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
@@ -371,15 +371,15 @@
         Star
       </button>
         <a class="social-count js-social-count" href="/open-xml-templating/docxtemplater/stargazers"
-           aria-label="547 users starred this repository">
-          547
+           aria-label="550 users starred this repository">
+          550
         </a>
 </form>  </div>
 
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="654JDuAdRm49rG9IgUOo7jEF5BiZA4Hgj2Ymhg5jfV2pIFe8J/4g4IfOVXik91vZPcth5gN8CwDqcQcgzFz9YA==" /></div>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qjkT6but9a804amNCtMlKzqgloG10+/0ddmre0menvToh01bfE6TIY6Dk70vZ9YcNm4Tfy+sZRQQzordi6EeyQ==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
@@ -1262,39 +1262,16 @@
 </div>
 
 
-
-  <div class="commit-tease">
-      <span class="float-right">
-        <a class="commit-tease-sha" href="/open-xml-templating/docxtemplater/commit/39c6e9f38268a520ce0970a93896bbd61a92e1bb" data-pjax>
-          39c6e9f
-        </a>
-        <relative-time datetime="2014-12-04T12:29:34Z">Dec 4, 2014</relative-time>
-      </span>
-      <div>
-        <img alt="@edi9999" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/2071336?v=3&amp;s=40" width="20" />
-        <a href="/edi9999" class="user-mention" rel="contributor">edi9999</a>
-          <a href="/open-xml-templating/docxtemplater/commit/39c6e9f38268a520ce0970a93896bbd61a92e1bb" class="message" data-pjax="true" title="tests are now async and start to pass on IE">tests are now async and start to pass on IE</a>
-      </div>
-
-    <div class="commit-tease-contributors">
-      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box">
-        <strong>1</strong>
-         contributor
-      </button>
-      
-    </div>
-
-    <div id="blob_contributors_box" style="display:none">
-      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
-      <ul class="facebox-user-list" data-facebox-id="facebox-description">
-          <li class="facebox-user-list-item">
-            <img alt="@edi9999" height="24" src="https://avatars1.githubusercontent.com/u/2071336?v=3&amp;s=48" width="24" />
-            <a href="/edi9999">edi9999</a>
-          </li>
-      </ul>
-    </div>
+<include-fragment class="commit-tease" src="/open-xml-templating/docxtemplater/contributors/master/vendor/jszip-utils.js">
+  <div>
+    Fetching contributors&hellip;
   </div>
 
+  <div class="commit-tease-contributors">
+    <img alt="" class="loader-loading float-left" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" />
+    <span class="loader-error">Cannot retrieve contributors at this time</span>
+  </div>
+</include-fragment>
 <div class="file">
   <div class="file-header">
   <div class="file-actions">
@@ -1312,12 +1289,12 @@
             <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
         </a>
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/edit/master/vendor/jszip-utils.js" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="T3O1NAzP/Wv9Ck2eJaIRxJ6Xqlk2/mwzrG0q+qf9MtZd2WnNbkvJ6YaFjmZCarGHrfOQb+p2p+TwSipUstaocA==" /></div>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/edit/master/vendor/jszip-utils.js" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="luNt3apX2M0eEuzLc7u7bLBC0vuhE3SXmhEQMGcNcEiESbEkyNPsT2WdLzMUcxsvgybozX2bv0DGNhCecibq7g==" /></div>
           <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
           </button>
-</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/delete/master/vendor/jszip-utils.js" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DmKdRvajA1uceJCFr0/z02IODm+W+Lw+2B06n+aNbITLsUDF6XVlLz6YqoOqSWSi1VWJztZIQBnKhA5cg/VoGQ==" /></div>
+</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/open-xml-templating/docxtemplater/delete/master/vendor/jszip-utils.js" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="GcoPfzdwiPNl7Ky9RDHVxgQgkTyVVj1Bx4DiI2auLyTcGdL8KKbuh8cMlrtBN0K3s3sWndXmwWbVGdbgA9YruQ==" /></div>
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="Fork this project and delete the file" data-disable-with>
             <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -1865,7 +1842,7 @@
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2017 <span title="0.16646s from github-fe-e627a19.cp1-iad.github.net">GitHub</span>, Inc.</li>
+      <li>&copy; 2017 <span title="0.20064s from github-fe163-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
@@ -1889,8 +1866,8 @@
 
 
     <script crossorigin="anonymous" integrity="sha256-ikMY/+oJoM24IUt2zykmufagztMYoxe+1BnbGSFMaQ0=" src="https://assets-cdn.github.com/assets/compat-8a4318ffea09a0cdb8214b76cf2926b9f6a0ced318a317bed419db19214c690d.js"></script>
-    <script crossorigin="anonymous" integrity="sha256-1JosuxdBEU79W/hETstbtbhd0VQHsJR9mShSb0smv/g=" src="https://assets-cdn.github.com/assets/frameworks-d49a2cbb1741114efd5bf8444ecb5bb5b85dd15407b0947d9928526f4b26bff8.js"></script>
-    <script async="async" crossorigin="anonymous" integrity="sha256-GAuTlp7HyxDDeWvIlDD1601HNqLiqaiAJJZv1W/ZRuc=" src="https://assets-cdn.github.com/assets/github-180b93969ec7cb10c3796bc89430f5eb4d4736a2e2a9a88024966fd56fd946e7.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-bRCeda2EcbpBUIJybADDX7kpzquXUIJJKDXxHsqMB9k=" src="https://assets-cdn.github.com/assets/frameworks-6d109e75ad8471ba415082726c00c35fb929ceab975082492835f11eca8c07d9.js"></script>
+    <script async="async" crossorigin="anonymous" integrity="sha256-JiDIsEmU1dbRJxibf8h4aUpt6hLCwxb+4W7ndRV+vEA=" src="https://assets-cdn.github.com/assets/github-2620c8b04994d5d6d127189b7fc878694a6dea12c2c316fee16ee775157ebc40.js"></script>
     
     
     
