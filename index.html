@@ -26,7 +26,7 @@
     <![endif]-->
 
     <!-- Icon -->
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="images/favicon.png">
 
     <!-- Local Style Overrides -->
     <style type="text/css">
@@ -45,24 +45,25 @@
          }
         #logo img {
             position: absolute;
-            top: -70px;
+            top: -45px;
         }
 
     </style>
 
 
     <script>
-    var totalNumPhones = 30;
-    var totalNumSites = 0;
+
     var sendButton;
     var geoRedundancy;
-    var siteNames = [];
+
  //   var value;
  //   var phoneArray;
  //   var makeArray
  //   var pstnArray;
     
     var jabberOnly;
+    var totalNumPhones = 30;
+    var totalNumSites = 0;
     var totalPhoneCubes = 5;
     var noPOE;
     var sumPhoneInput = 20;
@@ -76,11 +77,13 @@
     var phone8861 = 0;
     var phoneKEM = 0;
 
-    var pstnT1PRI;
-    var pstnT1CAS;
-    var pstn1MB;
-    var pstnBRI;
-    var pstnE1PRI;
+    var siteNames = [];
+    var pstnT1PRI = [];
+    var pstnT1CAS = [];
+    var pstn1MB = [];
+    var pstnBRI = [];
+    var pstnE1PRI = [];
+    var mplsBw = [];
     var totalPSTNAccess;
 
 
@@ -104,6 +107,21 @@
         } else if (val == "19") {
             totalPhoneCubes = totalPhoneCubes + sumPhoneInput;
             console.log('totalPhoneCubes ' + totalPhoneCubes);
+        } else if (val == "20") {
+            for (i = 0; i < siteNames.length; i++) { 
+                console.log('in for loop')
+                var chr = String.fromCharCode(65 + i);
+                var curSite = "site" + chr;
+                //console.log(curSite);
+                mplsBw[i] = jQuery('input[name="' + siteNames[i] + 'mplsBw"]').val();
+                pstnT1PRI[i] = Number(jQuery('input[name="' + siteNames[i] + 'pstnT1PRI"]').val());
+                pstnT1CAS[i] = Number(jQuery('input[name="' + siteNames[i] + 'pstnT1CAS"]').val());
+                pstn1MB[i] = Number(jQuery('input[name="' + siteNames[i] + 'pstn1MB"]').val());
+                pstnBRI[i] = Number(jQuery('input[name="' + siteNames[i] + 'pstnBRI"]').val());
+                pstnE1PRI[i] = Number(jQuery('input[name="' + siteNames[i] + 'pstnE1PRI"]').val());
+                phone7821[i] = Number(jQuery('input[name="' + siteNames[i] + 'phone7821"]').val());
+            }
+
         } else {
 
         }
@@ -119,7 +137,7 @@
         switch(val) {
             case "0":{
                 document.getElementById('question').innerHTML = 'Is this a new or Existing system?';
-                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
                 $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="1">New Phone System</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="2">Use Existing System</button></p>')
                 break;
             }
@@ -172,7 +190,7 @@
             case "5":{ 
                 document.getElementById('question').innerHTML = 'Please enter the total number of sites.';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note: default is 1 site.  Each additional site increases the total implementation cost.</p>';
-                $('#content').html('<p><form><fieldset><input id="numVal2" type="number" /></p></fieldset></form><p><button type="submit" class="btn btn-default btn-lg btn-block">Continue</button></p>')
+                $('#content').html('<p><form><fieldset><input id="numVal2" type="number" class="form-control"></p></fieldset></form><p><button type="submit" class="btn btn-default btn-lg btn-block">Continue</button></p>')
                     jQuery(function(){
 
                         $("#numVal2").blur(function() {
@@ -184,7 +202,7 @@
                             var curSite = "site" + chr;
                             console.log(curSite);
                             if (i == 0) {
-                                $('#content').html('<p><form id="test" action=""><fieldset><input  name="' + curSite + '" type="text" value="SITE ' + chr + '" /></p>') // clear element if first text box
+                                $('#content').html('<p><form id="test" action=""><fieldset><input name="' + curSite + '" type="text" class="form-control" value="SITE ' + chr + '" /></p>') // clear element if first text box
                                 if (totalNumSites > 1) {
                                     document.getElementById('question').innerHTML = 'Please enter the site names.';
                                     document.getElementById('message').innerHTML = '<p class="bg-info">Note: sample site names can be replaced in the SOW later.</p>';
@@ -195,7 +213,7 @@
                                 
 
                             } else {
-                            $('#content').append('<p><input name="' + curSite + '" type="text" value="SITE ' + chr + '" /></p>')
+                            $('#content').append('<p><input name="' + curSite + '" type="text" class="form-control" value="SITE ' + chr + '" /></p>')
                             }
                             $('#content').append('</fieldset></form>')
                         
@@ -230,26 +248,38 @@
                 break;
             }
             case "7":{
+                
                 geoRedundancy = true;
-                document.getElementById('question').innerHTML = 'At which location will the redundant hardware reside?';
-                document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><form><fieldset><input id="textVal" type="text" value="REDUNDANT SITE" /></p></fieldset></form><p><button type="button" class="btn">Okay</button></p>')
+                document.getElementById('question').innerHTML = 'Select site designations:';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
+                $('#content').html('<p><form><select class="form-control" id="primarySiteName" placeholder="Primary Site"><option>Select Primary Site</option></select></p><select class="form-control" id="redundantSiteName"><option>Select Redundant Site</option></select></p></fieldset></form><p><button type="submit" id="sendButton" value="8" class="btn btn-default btn-lg btn-block">Okay</button></p>')
+                var select = document.getElementById("primarySiteName");
+                for(var i = 0; i < siteNames.length; i++) {
+                    var opt = siteNames[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                }
+                var select = document.getElementById("redundantSiteName");
+                for(var i = 0; i < siteNames.length; i++) {
+                    var opt = siteNames[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                }
             // Need to add something to account for hitting enter - resets currently
-                jQuery(function(){
-                    $("#textVal").blur(function() {
-                        redundantSiteName = $("#textVal").val(); 
-                        $("#redundantSiteName").text(redundantSiteName);
-                        document.getElementById('question').innerHTML = 'You have entered ' + redundantSiteName + ', is this correct?';
-                        $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="8">Yes</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="7">No</button></p>')
-                    });
-                });
+
                 break;
             }
             case "8":{
 
                 var getArray = siteNames[1];
-
-
+                primarySiteName = $("#primarySiteName").val();
+                redundantSiteName = $("#redundantSiteName").val();
+                console.log('primary site name is ' + primarySiteName);
+                console.log('redundant site name is ' + redundantSiteName);
                 console.log('site names is ' + getArray);
                 document.getElementById('question').innerHTML = 'BCE allows only specific Cisco SIP phones and Cisco Jabber as supported endpoints.  Click "Select Phones" below, or click "Jabber Only" if no physical phones are being purchased. If the customer chooses to use their own phones (must be supported models for BCE), select Customer Provided.';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note: every seat purchased allows Cisco Jabber (soft client) to be used free of charge in conjunction with or in place of a hard phone.</p>';
@@ -259,9 +289,9 @@
                 break;
             }
             case "9":{
-                document.getElementById('question').innerHTML = 'Populate the quantity of phones for each type.';
-                //document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><form action=""><fieldset><input name="phone7821" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal7821">7821</button></p><input name="phone7841" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal7841">7841</button></p><input name="phone8831" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal8831">8831</button></p><input name="phone8841" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal8841">8841</button></p><input name="phone8851" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal8851">8851</button></p><input name="phone8861" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal8861">8861</button></p><input name="phoneKEM" type="number" placeholder="0" /><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal8800">KEM</button></p></fieldset></form><p>')
+                document.getElementById('question').innerHTML = 'Populate the quantity of phones for each type.  Click the button of the model for more information.';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
+                $('#content').html('<p><div class="input-group"><input name="phone7821" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal7821">7821</button></div></div></p><p><div class="input-group"><input name="phone7841" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal7841">7841</button></div></div></p><p><div class="input-group"><input name="phone8831" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal8831">8831</button></div></div></p><p><div class="input-group"><input name="phone8841" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal8841">8841</button></div></div></p><p><div class="input-group"><input name="phone8851" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal8851">8851</button></div></div></p><p><div class="input-group"><input name="phone8861" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal8861">8861</button></div></div></p><p><div class="input-group"><input name="phoneKEM" type="number" class="form-control" placeholder="0" /><div class="input-group-btn"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal8800">KEM</button></div></div></div></p>')
 
                         // Old Array code
                         /*{$( "form" ).submit(function( event ) {
@@ -331,19 +361,19 @@
                 document.getElementById('question').innerHTML = 'Enter the total number of analog FAX machines required.';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note: Sprint SIPT supports T.38 compliant faxing, though it is recommended for customers to use POTS (1mb) lines for FAX, as it is best effort.</p>';
                 
-                    $('#content').html('<p><form><fieldset><input id="numVal3" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn btn-default btn-lg btn-block">Submit</button>')
+                    $('#content').html('<p><form><fieldset><input id="numVal3" type="number" placeholder="0" class="form-control"></p></fieldset></form><p><button type="button" class="btn btn-default btn-lg btn-block" id="submit13a">Continue</button>')
                         // Need to add something to account for hitting enter - resets currently
                         jQuery(function(){
-                            $("#numVal3").blur(function() {
+                            $("#submit13a").click(function() {
                             totalNumFax = Number($("#numVal3").val()); 
                             $("#totalNumFax").text(totalNumFax);
                             
                             document.getElementById('question').innerHTML = 'Enter the total number of analog phone connections required.';
                             document.getElementById('message').innerHTML = "<p class='bg-info'>It is the customer's responsibility to procure and wire analog phones to Sprint placed ATA device.</p>";                                
-                            $('#content').html('<p><form><fieldset><input id="numVal3" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn">Submit</button>')
+                            $('#content').html('<p><form><fieldset><input id="numVal3" type="number" placeholder="0" class="form-control"></p></fieldset></form><p><button type="button" id="submit13b" class="btn btn-default btn-lg btn-block">Continue</button>')
 
                                 jQuery(function(){
-                                $("#numVal3").blur(function() {
+                                $("#submit13b").click(function() {
                                     totalNumAnalog = Number($("#numVal3").val());
                                     totalNumATA = Math.ceil((totalNumFax + totalNumAnalog)/2);
 
@@ -358,7 +388,7 @@
                                         document.getElementById('question').innerHTML = 'A total of <strong>' + totalNumATA + ' ' + devLang + ' required</strong> to support this configuration.  Each ATA190 device is equipped with two (2) analog ports.';
                                         $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="14">Continue</button></p>')
                                     } else {
-                                        document.getElementById('question').innerHTML = 'No analog devices will be supported for this build, and no ATA devices are needed.';
+                                        document.getElementById('question').innerHTML = 'No analog devices were specified for this project, therefore no ATA devices are needed.';
                                         $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="14">Continue</button></p>')
                                     }
                                 });     
@@ -391,10 +421,10 @@
                                 $("#onClick2").click(function() {
                                     document.getElementById('question').innerHTML = 'Please enter the total number of Cisco power supply cubes required.';
                                     
-                                    $('#content').html('<p><form><input id="numVal4" type="number" value="0" /></p></fieldset></form><p><button type="button" class="btn" id="sendButton" value="15">Update Quantity</button></form></p>')
+                                    $('#content').html('<p><form><input id="numVal14" type="number" placeholder="0" class="form-control"></p></fieldset></form><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="15">Continue</button></form></p>')
                                         jQuery(function(){
-                                            $("#numVal4").blur(function() {
-                                            totalPhoneCubes = Number($("#numVal4").val()); 
+                                            $("#numVal14").blur(function() {
+                                            totalPhoneCubes = Number($("#numVal14").val()); 
                                             $("#totalPhoneCubes").text(totalPhoneCubes);
                                             console.log(totalPhoneCubes);
                                         });
@@ -414,7 +444,7 @@
             case "15":{
                 document.getElementById('question').innerHTML = 'Enter the number of voicemail boxes requested.';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note: this is usually equal to the number of phones, but can be reduced to lower cost if not needed.</p>';
-                $('#content').html('<p><form><fieldset><input id="numVal5" type="number" value="" /></p></fieldset></form><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="16">Submit</button>')
+                $('#content').html('<p><form><fieldset><input id="numVal5" type="number" value="' + totalNumPhones + '" class="form-control"></p></fieldset></form><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="16">Submit</button>')
                         // Need to add something to account for hitting enter - resets currently
                         jQuery(function(){
                             $("#numVal5").blur(function() {
@@ -430,7 +460,7 @@
             case "16":{
                 if (totalNumSites > 1) {
                     document.getElementById('question').innerHTML = 'Because the customer has multiple locations, they can have Survivable Remote Site Surviability (SRST), in case the remote location loses connectivity with the main site.  This will allow their phones to continue to make outbound calls over local circuits.  Will the customer utilize SRST at remote sites?';
-                document.getElementById('message').innerHTML = '<p class="bg-info">Note: to support SRST, the customer must have PSTN access to the router.  This means a non-Sprint PRI, or analog POTS lines (e.g. 1mb lines).  The customer will also need router hardware to support these lines.  These requirements are not included in BCE.</p>';
+                document.getElementById('message').innerHTML = '<p class="bg-info">Note: to support SRST, the customer must have local PSTN access which is or can be terminated to the MPLS router.  This means a non-Sprint PRI, or analog POTS lines (e.g. 1mb lines).  The customer will also need router hardware to support these lines.  These requirements are not included in BCE.</p>';
                 $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" name="17" value="17" onclick="varSet.call(this)">Yes</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="17">No</button></p>')
 
                     
@@ -461,7 +491,7 @@
                 if (noPOE) {
 
                 document.getElementById('question').innerHTML = 'If customer does not have POE switches capable of powering the phones, each phone will need a power cube.  Click yes to include <strong>' + sumPhoneInput + '</strong> additional power cubes to scope, or no to change previous answer';
-                //document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
                 $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="19" onclick="varSet.call(this)">Yes</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="19">No</button></p>')
 
 
@@ -470,82 +500,63 @@
             }
 
             case "19":{
-                document.getElementById('question').innerHTML = 'Please list all PSTN access the customer currently has, if known.  Leave value at default if not known.';
-                //document.getElementById('message').innerHTML = '<p class="bg-info">Note: </p>';
-                $('#content').html('<p><form action=""><fieldset><input name="pstnT1PRI" type="number" value="0" />T1 ISDN PRI (or QSIG)</p><input name="pstnT1CAS" type="number" value="0" />T1 CAS</p><input name="pstn1MB" type="number" value="0" />1 MB (analog POTS lines)</p><input name="pstnBRI" type="number" value="0" />BRI</p><input name="pstnE1PRI" type="number" value="0" />E1 PRI (International)</p></fieldset></form><p>')
+                
+                document.getElementById('question').innerHTML = 'Please list all MPLS bandwidth and PSTN access the customer currently has, if known.  Leave value at default if not known.';
+                document.getElementById('message').innerHTML = '<p hidden></p>';
+                $('#content').html('')
 
-                   /* $( "form" ).submit(function( event ) {
-                        pstnAccess = $( this ).serializeArray();
-                        //console.log( $( this ).serializeArray() );
-                        event.preventDefault();
-                        console.log('pstnAccess = ' + pstnAccess);
-                        console.log('phone array = ' + phoneArray);
-                    });
-                    */
 
-                    $('#content').append('<p><button type="submit" class="btn btn-default btn-lg btn-block" id="sendButton" value="20">Submit</button></p>')
+                    for(var i = 0; i < siteNames.length; i++) {
+                    var curSite = siteNames[i];
+                    $('#content').append('<p><strong> ' + siteNames[i] + ':</strong></p<form action=""><fieldset><input name="' + siteNames[i] + 'mplsBw" type="number" value="0" />MPLS B/w</p><input name="' + siteNames[i] + 'pstnT1PRI" type="number" value="0" />T1 PRI</p><input name="' + siteNames[i] + 'pstnT1CAS" type="number" value="0" />T1 CAS</p><input name="' + siteNames[i] + 'pstn1MB" type="number" value="0" />1 MB</p><input name="' + siteNames[i] + 'pstnBRI" type="number" value="0" />BRI</p><input name="' + siteNames[i] + 'pstnE1PRI" type="number" value="0" />E1 PRI (International)</p></fieldset></form><p>')
+                    }
+                
+
+
+                    $('#content').append('<p><button type="submit" class="btn btn-default btn-lg btn-block" id="sendButton" value="20" onclick="varSet.call(this)">Submit</button></p>')
 
 
                 break;
             } 
             case "20":{
-                //console.log('makeArray = ' + makeArray);
-                //pstnAccessArray = makeArray;
-                //console.log('pstn access array = ' + pstnAccessArray);
-
-                pstnT1PRI = Number(jQuery('input[name="pstnT1PRI"]').val());
-                pstnT1CAS = Number(jQuery('input[name="pstnT1CAS"]').val());
-                pstn1MB = Number(jQuery('input[name="pstn1MB"]').val());
-                pstnBRI = Number(jQuery('input[name="pstnBRI"]').val());
-                pstnE1PRI = Number(jQuery('input[name="pstnE1PRI"]').val());
-                phone7821 = Number(jQuery('input[name="phone7821"]').val());
-
-                totalPSTNAccess = (pstnT1PRI * 23) + (pstnT1CAS * 24) + pstn1MB + (pstnBRI * 2) + (pstnE1PRI * 30);
-
-
-                if (totalPSTNAccess > 0) {
-                    document.getElementById('question').innerHTML = 'Total access channels for voice calls today is <strong>' + totalPSTNAccess + '</strong>.';
-
-                    
+                document.getElementById('question').innerHTML = '<p><strong>Site MPLS and PSTN Access Summary:</strong></p>';
+                $('#content').html('')
+                for (i = 0; i < siteNames.length; i++) { 
+                    $('#content').append('<p><strong>' + siteNames[i] + '</strong></p>')
+                    var curSiteMpls = mplsBw[i];
+                    var curSiteT1PRI = pstnT1PRI[i];
+                    var curSiteT1CAS = pstnT1CAS[i];
+                    var curSite1MB = pstn1MB[i];
+                    var curSiteBRI = pstnBRI[i];
+                    var curSiteE1PRI = pstnE1PRI[i];
+                    totalPSTNAccess = (curSiteT1PRI * 23) + (curSiteT1CAS * 24) + curSite1MB + (curSiteBRI * 2) + (curSiteE1PRI * 30);
+                   $('#content').append('<p>The total channel access for <strong>' + siteNames[i] + '</strong> is <strong>' + totalPSTNAccess + '</strong>.</p>  This site has <strong>' + curSiteMpls + '</strong> available for MPLS circuits.</p>')
                 }
-
-
-               if (totalNumSites > 1) {
-                    $('#question').append('<p class="lead">Enter MPLS bandwidth for each site if known.</p>')
-
-                    for (i = 0; i < totalNumSites; i++) { 
-                        var chr = String.fromCharCode(65 + i);
-                        var curSite = site + chr;
-                        if (i == 0) {
-                            $('#content').html('<p><form><fieldset><input id="siteNames" name="' + curSite + 'Bw" type="text" placeholder="SITE ' + chr + '" /></p>') // clear element if first text box
-                            document.getElementById('message').innerHTML = '<p class="bg-info">Note: sample site names can be replaced in the SOW later.</p>';
-                        } else {
-                        $('#content').append('<p><form><fieldset><input id="siteNames" name="' + curSite + 'Bw" type="text" value="SITE ' + chr + '" /></p>')
-                        }
-                    };
-                }
+                console.log(pstnT1PRI[0]);
                 
-                
+              
 
-                //document.getElementById('message').innerHTML = 'This is a test!';
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="3">Yes</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="100">No</button></p>')
+                $('#content').append('<br><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="21">Continue</button></p>')
 
 
                 break;
             }
             case "21":{
-                document.getElementById('question').innerHTML = 'Is there any requirement for a contact center?';
-                document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE does not currently support contact center applications (UCCX)</p>';
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="4">No</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="100">Yes</button></p>')
+                document.getElementById('question').innerHTML = '<p>Congratulations, BCE is a fit for this customer.  Based on the input given, you will need to use Netformix template BCE-01.  The following items need to be entered into this Netformix template to generate a Bill of Materials (BOM) with current pricing.  That pricing can be added to the total implementation charges, which are <strong>$1200.00.</strong></p><p>Please click Generate SOW below to generate the SOW.  Paste the updated BOM from Netformix into the SOW before providing to customer for signature.</p>';
+                document.getElementById('message').innerHTML = '<p class="bg-info" hidden>Note that BCE does not currently support contact center applications (UCCX)</p>';
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="500">Yes</button></p>')
 
 
                 break;
             }
 
-            case "22":{
-                document.getElementById('question').innerHTML = 'Does the customer have Sprint MPLS?  If not, will they before implementation?';
-                document.getElementById('message').innerHTML = '<p class="bg-info">Note: Sprint MPLS is required for BCE.</p>';
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="5">Yes</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="100">No</button></p>')
+            case "99":{
+                      $('#content').html(
+                '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="5">Run Wizard</button></p>' + 
+                '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="200">Demo Videos</button></p>' +
+                '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="300">FAQ</button></p>' +
+                '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="400">Alternative Solutions</button></p>'
+                    );
 
 
                 break;
@@ -553,23 +564,47 @@
             case "100":{
                 document.getElementById('question').innerHTML = "Business Collaboration Express may not be the best fit.  Here's why:";
                 document.getElementById('message').innerHTML = "";
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="0">Start Over</button></p>')
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
 
                 break;
 
             }
-            case "101":{
-                document.getElementById('question').innerHTML = 'TDM to SIP Trunking Conversion Options';
+            case "200":{
+                document.getElementById('question').innerHTML = 'Demo Videos';
                 document.getElementById('message').innerHTML = "";
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="0">Start Over</button></p>')
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
 
                 break;
 
-            }                              
+            } 
+            case "300":{
+                document.getElementById('question').innerHTML = 'Frequently Asked Questions';
+                document.getElementById('message').innerHTML = "";
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+
+                break;
+
+            }
+            case "400":{
+                document.getElementById('question').innerHTML = 'Alternative Solutions';
+                document.getElementById('message').innerHTML = "";
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+
+                break;
+
+            }
+            case "500":{
+                document.getElementById('question').innerHTML = 'Thank you for using the BCE wizard!  Click below to start over.';
+                document.getElementById('message').innerHTML = "";
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+
+                break;
+
+            }                                                     
             default:
                 document.getElementById('question').innerHTML = 'Sorry, something went wrong.  Please try again.';
-                document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value=0>Start Over</button></p>')
+                document.getElementById('message').innerHTML = '<p hidden></p>';
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
 
                 break;
 
@@ -589,7 +624,7 @@
                     <h2><small>Sprint Managed Voice and Collaboration</small></h2>
                 </div>
                 <div class="col-sm-4 hidden-xs">
-                    <img id="logo" src="images/logo.png" class="img-responsive" alt="logo-header.png" style="width:185px;height:256px;">
+                    <img id="logo" src="images/logo-header.png" class="img-responsive" alt="logo-header.png" style="width:140px;height:203px;">
                 </div>
             </div>
         </div>
@@ -598,14 +633,14 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8"">
-                <p id="question" class="lead">This wizard will qualify customers for Sprint's Business Collaboration Express product</p>                  
+                <p id="question" class="lead">This wizard will qualify customers for Sprint's Business Collaboration Express product.</p>                  
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8"">
-                <p id="message" class="bold"></p>                    
+                <p id="message" class="lead">Please choose from the options below.</p>                    
             </div>
         </div>
     </div>
@@ -623,7 +658,13 @@
 
 -->
 
-                    <script>$('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="0">Get Started!</button></p>');
+                    <script>
+                    $('#content').html(
+                            '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="5">Run Wizard</button></p>' + 
+                            '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="200">Demo Videos</button></p>' +
+                            '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="300">FAQ</button></p>' +
+                            '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="400">Alternative Solutions</button></p>'
+                        );
                     </script>
                     </p>
             </div>
