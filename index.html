@@ -47,6 +47,46 @@
             position: absolute;
             top: -45px;
         }
+        #myInput {
+          background-image: url('images/searchicon.png');
+          background-position: 10px 12px;
+          background-repeat: no-repeat;
+          width: 100%;
+          font-size: 16px;
+          padding: 12px 20px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+        }
+
+        #myUL {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        #myUL li a {
+          border: 1px solid #ddd; /* Add a border to all links */
+          margin-top: -1px; /* Prevent double borders */
+          background-color: #f6f6f6;
+          padding: 10px;
+          text-decoration: none;
+          color: black;
+          display: block
+        }
+
+        #myUL li a.header {
+          border:none;
+
+        }
+
+        #myUL li a:hover:not(.header) {
+          background-color: none;
+
+        }
+        .panel, .panel-group .panel-heading+.panel-collapse>.panel-body {
+            border: none;
+            box-shadow: none;
+        }
 
     </style>
 
@@ -55,6 +95,7 @@
 
     var sendButton;
     var geoRedundancy;
+
 
  //   var value;
  //   var phoneArray;
@@ -86,6 +127,22 @@
     var mplsBw = [];
     var totalPSTNAccess;
 
+function progSearch() {
+                        var input, filter, ul, li, a, i;
+                        input = document.getElementById("myInput");
+                        filter = input.value.toUpperCase();
+                        ul = document.getElementById("myUL");
+                        li = ul.getElementsByTagName("li");
+                        for (i = 0; i < li.length; i++) {
+                            a = li[i].getElementsByTagName("a")[0];
+                            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                li[i].style.display = "";
+                            } else {
+                                li[i].style.display = "none";
+
+                            }
+                        }
+                    }
 
     function varSet() {
        var val = $(this).val();
@@ -542,15 +599,17 @@
                 break;
             }
             case "21":{
-                document.getElementById('question').innerHTML = '<p>Congratulations, BCE is a fit for this customer.  Based on the input given, you will need to use Netformix template BCE-01.  The following items need to be entered into this Netformix template to generate a Bill of Materials (BOM) with current pricing.  That pricing can be added to the total implementation charges, which are <strong>$1200.00.</strong></p><p>Please click Generate SOW below to generate the SOW.  Paste the updated BOM from Netformix into the SOW before providing to customer for signature.</p>';
-                document.getElementById('message').innerHTML = '<p class="bg-info" hidden>Note that BCE does not currently support contact center applications (UCCX)</p>';
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="500">Yes</button></p>')
+                document.getElementById('question').innerHTML = '<p><strong>Congratulations, BCE is a fit for this customer!</strong>  Based on the input given, you will need to use Netformix template BCE-01.  The following items need to be entered into this Netformix template to generate a Bill of Materials (BOM) with current pricing.  That pricing can be added to the total implementation charges, which are <strong>$1200.00.</strong></p><p>Please click Generate SOW below to generate the SOW.  Paste the updated BOM from Netformix into the SOW before providing to customer for signature.</p>';
+                document.getElementById('message').innerHTML = '';
+                $('#content').html('<p><a href="bce-csow.docx" download="bce-csow.docx"><button type="submit" class="btn btn-default btn-lg btn-block" >Generate SOW</button></a></p><p><button type="submit" class="btn btn-default btn-lg btn-block" id="sendButton" value="500">Start Over</button></form></p>')
 
 
                 break;
             }
 
             case "99":{
+                document.getElementById('question').innerHTML = "This wizard will qualify customers for Sprint's Business Collaboration Express product.";
+                document.getElementById('message').innerHTML = "Please choose from the options below.";
                       $('#content').html(
                 '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="5">Run Wizard</button></p>' + 
                 '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="200">Demo Videos</button></p>' +
@@ -579,8 +638,11 @@
             } 
             case "300":{
                 document.getElementById('question').innerHTML = 'Frequently Asked Questions';
-                document.getElementById('message').innerHTML = "";
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+                document.getElementById('message').innerHTML = '<input type="text" id="myInput" onkeyup="progSearch()" placeholder="Search FAQ" title="Search FAQ">';
+                $('#content').html('<p><ul id="myUL"><div class="panel-group" id="accordion"><div class="panel">    <div class="panel-heading"  id="headingOne">         <li>     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">How many phones are supported by BCE?</a>   </li>    </div>    <div id="collapseOne" class="panel-collapse collapse" aria-labelledby="headingOne">      <div class="panel-body">BCE supports up to 1000 phones.</div>    </div>  </div>  <div class="panel">    <div class="panel-heading" role="tab" id="headingTwo">         <li><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">What is BCE?</a> </li>       </div>    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">      <div class="panel-body">BCE stands for Business Collaboration Express.  This is a product bundle in the MIPT 2M category, targeted at SMB customers who fit within the criteria.  BCE has been specifically designed to be easy to engineer and implement, and drives costs down thanks to rigid requirements and feature pruning.</div>    </div>  </div>  <div class="panel">    <div class="panel-heading" role="tab" id="headingThree">            <li><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">          What equipment is used for BCE?        </a>  </li>    </div>    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">      <div class="panel-body">        BCE is built on the Business Edition 6000 platform, by Cisco.      </div>    </div>  </div></div></ul></p>')
+
+                    
+                
 
                 break;
 
