@@ -195,24 +195,24 @@ function progSearch() {
             case "0":{
                 document.getElementById('question').innerHTML = 'Is this a new or Existing system?';
                 document.getElementById('message').innerHTML = '<p hidden></p>';
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="1">New Phone System</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="2">Use Existing System</button></p>')
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="1">New Phone System</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="400">Use Existing System</button></p>')
                 break;
             }
 
             case "1":{ 
                 document.getElementById('question').innerHTML = '<p>How many phones will be installed?</p>';
                 document.getElementById('message').innerHTML = '<p class="bg-info">Note that BCE will support up to 1000 phones maximum</p>';
-                $('#content').html('<p><form><fieldset><input id="numVal1" type="number" value="" /></p></fieldset></form><p><br><button type="button" class="btn">Continue</button>')
+                $('#content').html('<p><form><fieldset><input id="numVal1" type="number" placeholder="0" class="form-control"></p></fieldset></form><p><br><button type="button" class="btn btn-default btn-lg btn-block">Continue</button>')
                     // Need to add something to account for hitting enter - resets currently
                     jQuery(function(){
                         $("#numVal1").blur(function() {
                         totalNumPhones = $("#numVal1").val(); 
                         $("#totalNumPhones").text(totalNumPhones);
                         if (totalNumPhones > 1000) {
-                            document.getElementById('question').innerHTML = 'Sorry, but ' + totalNumPhones + ' phones have been selected.  This product only supports up to 1000 devices.  Click below to see other options.';
-                            $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="100">Continue</button></p>')
+                            document.getElementById('question').innerHTML = 'Sorry, but <strong>' + totalNumPhones + '</strong> phones have been selected.  This product only supports up to 1000 devices.';
+                            $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="1">Enter Different Amount</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="400">Alternative Solutions</button></p>')
                         } else {
-                            document.getElementById('question').innerHTML = totalNumPhones + ' phones have been selected.  Is this correct?';
+                            document.getElementById('question').innerHTML = '<strong>' + totalNumPhones + '</strong> phones have been selected.  Is this correct?';
                             $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="2">Yes</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="1">No</button></p>')
                         }
                         });
@@ -246,8 +246,8 @@ function progSearch() {
 
             case "5":{ 
                 document.getElementById('question').innerHTML = 'Please enter the total number of sites.';
-                document.getElementById('message').innerHTML = '<p class="bg-info">Note: default is 1 site.  Each additional site increases the total implementation cost.</p>';
-                $('#content').html('<p><form><fieldset><input id="numVal2" type="number" class="form-control"></p></fieldset></form><p><button type="submit" class="btn btn-default btn-lg btn-block">Continue</button></p>')
+                document.getElementById('message').innerHTML = '<p class="bg-info">Note: BCE requires at least 1 site.  Each additional site increases the total implementation cost.</p>';
+                $('#content').html('<p><form><fieldset><input id="numVal2" type="number" class="form-control" placeholder="0"></p></fieldset></form><p><button type="submit" class="btn btn-default btn-lg btn-block">Continue</button></p>')
                     jQuery(function(){
 
                         $("#numVal2").blur(function() {
