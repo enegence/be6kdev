@@ -601,7 +601,7 @@ function progSearch() {
             case "21":{
                 document.getElementById('question').innerHTML = '<p><strong>Congratulations, BCE is a fit for this customer!</strong>  Based on the input given, you will need to use Netformix template BCE-01.  The following items need to be entered into this Netformix template to generate a Bill of Materials (BOM) with current pricing.  That pricing can be added to the total implementation charges, which are <strong>$1200.00.</strong></p><p>Please click Generate SOW below to generate the SOW.  Paste the updated BOM from Netformix into the SOW before providing to customer for signature.</p>';
                 document.getElementById('message').innerHTML = '';
-                $('#content').html('<p><a href="bce-csow.docx" download="bce-csow.docx"><button type="submit" class="btn btn-default btn-lg btn-block" >Generate SOW</button></a></p><p><button type="submit" class="btn btn-default btn-lg btn-block" id="sendButton" value="500">Start Over</button></form></p>')
+                $('#content').html('<p><a href="bce-csow.docx" download="bce-csow.docx"><button type="submit" class="btn btn-default btn-lg btn-block" >Generate SOW</button></a></p><p><button type="submit" class="btn btn-default btn-lg btn-block" id="sendButton" value="500">End Wizard</button></form></p>')
 
 
                 break;
@@ -722,7 +722,7 @@ function progSearch() {
 
                     <script>
                     $('#content').html(
-                            '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="5">Run Wizard</button></p>' + 
+                            '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="0">Run Wizard</button></p>' + 
                             '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="200">Demo Videos</button></p>' +
                             '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="300">FAQ</button></p>' +
                             '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="400">Alternative Solutions</button></p>'
