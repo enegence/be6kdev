@@ -63,10 +63,10 @@
           padding: 0;
           margin: 0;
         }
-
+/*
         #myUL li a {
-          border: 1px solid #ddd; /* Add a border to all links */
-          margin-top: -1px; /* Prevent double borders */
+          border: 1px solid #ddd; /* Add a border to all links
+          margin-top: -1px; /* Prevent double borders 
           background-color: #f6f6f6;
           padding: 10px;
           text-decoration: none;
@@ -87,6 +87,24 @@
             border: none;
             box-shadow: none;
         }
+        */
+        .asText {
+            background:none;
+            border:none;
+            margin:0;
+            padding:0;
+            text-align:left;
+        }
+
+       
+        #myUL div {
+            margin-top: 5px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        } 
+
+
 
     </style>
 
@@ -630,18 +648,17 @@ function progSearch() {
             }
             case "200":{
                 document.getElementById('question').innerHTML = 'Demo Videos';
-                document.getElementById('message').innerHTML = "";
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
-
+                //document.getElementById('message').innerHTML = '<input type="file" name="file" id="file">';
+                                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+                    $( "#content" ).load( "faq.html" );
                 break;
 
             } 
             case "300":{
                 document.getElementById('question').innerHTML = 'Frequently Asked Questions';
                 document.getElementById('message').innerHTML = '<input type="text" id="myInput" onkeyup="progSearch()" placeholder="Search FAQ" title="Search FAQ">';
-                $('#content').html('<p><ul id="myUL"><div class="panel-group" id="accordion"><div class="panel">    <div class="panel-heading"  id="headingOne">         <li>     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">How many phones are supported by BCE?</a>   </li>    </div>    <div id="collapseOne" class="panel-collapse collapse" aria-labelledby="headingOne">      <div class="panel-body">BCE supports up to 1000 phones.</div>    </div>  </div>  <div class="panel">    <div class="panel-heading" role="tab" id="headingTwo">         <li><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">What is BCE?</a> </li>       </div>    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">      <div class="panel-body">BCE stands for Business Collaboration Express.  This is a product bundle in the MIPT 2M category, targeted at SMB customers who fit within the criteria.  BCE has been specifically designed to be easy to engineer and implement, and drives costs down thanks to rigid requirements and feature pruning.</div>    </div>  </div>  <div class="panel">    <div class="panel-heading" role="tab" id="headingThree">            <li><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">          What equipment is used for BCE?        </a>  </li>    </div>    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">      <div class="panel-body">        BCE is built on the Business Edition 6000 platform, by Cisco.      </div>    </div>  </div></div></ul></p>')
-
-                    
+                
+                    $( "#content" ).load( "test2.html" );
                 
 
                 break;
@@ -682,8 +699,10 @@ function progSearch() {
         <div class="container" id="logo">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
+                    <button class="asText" id="sendButton" value="99" style="outline: 0;">
                     <h2>Business Collaboration Express</h2>
                     <h2><small>Sprint Managed Voice and Collaboration</small></h2>
+                    </button>
                 </div>
                 <div class="col-sm-4 hidden-xs">
                     <img id="logo" src="images/logo-header.png" class="img-responsive" alt="logo-header.png" style="width:140px;height:203px;">

@@ -1,0 +1,115 @@
+<p>
+	<ul id="myUL">
+		<div class="list-group">
+			<li><a class="list-group-item" href="#faq000" data-toggle="collapse">What is BCE?</a></li>
+				<div id="faq000" class="collapse">BCE, or Business Collaboration Express, is a 2M product tier bundle designed as a specific implementation construct on a Cisco Business Edition 6000 server.  While the specifications for the Cisco Business Edition 6000 (BE6K) allow for extremely various and diverse deployments, BCE has strict requirements.  These requirements ensure a simpler, faster sales engineering process, a standardized deployment structure, and normalize assurance tasks.
+				</div>
+            <li><a class="list-group-item" href="#faq001" data-toggle="collapse">What equipment is used for BCE?</a></li>
+        		<div id="faq001" class="collapse">BCE utilizes Cisco's Business Edition 6000 (BE6K) server.  BCE also utilizes Cisco SIP phones, including the 7821, 7841, 8831, 8841, 8861, and 8800 KEM phones.
+        		</div>
+            <li><a class="list-group-item" href="#faq002" data-toggle="collapse">Is Active Directory (AD) required?</a></li>
+            	<div id="faq002" class="collapse">Yes, some directory service that can be accessed via LDAP is required for BCE.  The customer's directory is their mechanism to add users to the platform, and it automates the process.  It is one of the primary reasons we're able to reduce implementation LOE.
+        		</div>
+            <li><a class="list-group-item" href="#faq003" data-toggle="collapse">Is MPLS required?</a></li>
+            	<div id="faq003" class="collapse">Yes, Sprint MPLS is required at this time. Sprint's monitoring systems communicate with the servers over the MPLS links, and MPLS is currently a requirement for Sprint SIP Trunking (SIPT).
+            	</div>
+            <li><a class="list-group-item" href="#faq004" data-toggle="collapse">Is Unified Contact Center Express (UCCX) supported?</a></li>
+            	<div id="faq004" class="collapse">No, UCCX is not supported with BCE.  While it can be used with the BE6K platform, it is not supported in the BCE bundle while Sprint manages the solution.
+            	</div>
+            <li><a class="list-group-item" href="#faq005" data-toggle="collapse">Is InformaCast paging supported?</a></li>
+            	<div id="faq005" class="collapse">InformaCast paging is not currently supported with the initial deployment.  An SCA may be opened to determine if this requirement can be met.
+            	</div>
+        	<li><a class="list-group-item" href="#faq006" data-toggle="collapse">Is overhead paging supported?</a></li>
+            	<div id="faq006" class="collapse">Not natively, no.  An SCA may be opened, but additional costs for this configuration would be incurred.
+            	</div>
+        	<li><a class="list-group-item" href="#faq007" data-toggle="collapse"> What switches are required for BCE? </a></li>
+            	<div id="faq007" class="collapse"> It is best practice to utilize switches which support separate VLANs for voice traffic, and support QoS.  Sprint recommends Cisco Power over Ethernet (POE) switches, though customers may already have switches that will work.  The customer will be responsible for evaluating their POE switches to determine whether or not they can provide enough power to supply desk phones.  Generally all approved Cisco SIP phones support the 802.3af and 802.3at standards, though the 802.3at standard is preferable.  If customers do not have POE switches, Cisco Power CUBE adapters will need to be purchased to supply power to the phones. 
+            	</div>
+        	<li><a class="list-group-item" href="#faq008" data-toggle="collapse"> Are there VLAN requirements? </a></li>
+            	<div id="faq008" class="collapse"> It is best practice to separate voice VLANs from other traffic.  Sprint will not accept any responsibility for security or quality issues if the best practices are not followed on the customer controlled network. 
+            	</div>
+        	<li><a class="list-group-item" href="#faq009" data-toggle="collapse"> Is Power over Ethernet (PoE) required? </a></li>
+            	<div id="faq009" class="collapse"> POE is recommended, but not required.  If POE doesn't exist on switches, customers may purchase Cisco Power CUBEs or another type of Ethernet power injector; however, it will be their responsibility to install these. 
+            	</div>
+        	<li><a class="list-group-item" href="#faq010" data-toggle="collapse"> Are Cisco switches required? </a></li>
+            	<div id="faq010" class="collapse"> Cisco switches are recommended, but not required. 
+            	</div>
+        	<li><a class="list-group-item" href="#faq011" data-toggle="collapse"> What are the supported POE standards for Cisco endpoints? </a></li>
+            	<div id="faq011" class="collapse"> Generally 802.3af and 802.3at.  The power requirement depends on the class of the device.  Visit Cisco's website for more information on endpoint power consumption. 
+            	</div>
+        	<li><a class="list-group-item" href="#faq012" data-toggle="collapse"> Are abbreviated dial patterns supported in BCE? </a></li>
+            	<div id="faq012" class="collapse"> E.164 ("plus 1" dialing) is supported, as well as an abbreviated dial.  The abbreviated dial has some limitations. 
+            	</div>
+        	<li><a class="list-group-item" href="#faq013" data-toggle="collapse"> What is the standard dial plan for BCE? </a></li>
+            	<div id="faq013" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq014" data-toggle="collapse"> Is Expressway supported for BCE? </a></li>
+            	<div id="faq014" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq015" data-toggle="collapse"> Is there a limit to the number of sites? </a></li>
+            	<div id="faq015" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq016" data-toggle="collapse"> How many users can be supported on the system? </a></li>
+            	<div id="faq016" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq017" data-toggle="collapse"> Is application redundancy available without geographical redundancy? </a></li>
+            	<div id="faq017" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq018" data-toggle="collapse"> Will faxing work if the endpoints (fax machines) don’t support T.38? </a></li>
+            	<div id="faq018" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq019" data-toggle="collapse"> Does Sprint SIPT only work with T.38 compliant fax machines? </a></li>
+            	<div id="faq019" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq020" data-toggle="collapse"> Can multiple 1000 seat implementations be linked for companies with larger seat requirements? </a></li>
+            	<div id="faq020" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq021" data-toggle="collapse"> What type of cabling is required? </a></li>
+            	<div id="faq021" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq022" data-toggle="collapse"> Which Power over Ethernet (POE) standards are supported by Cisco endpoints? </a></li>
+            	<div id="faq022" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq023" data-toggle="collapse"> How can the tool be utilized to add a new site to an existing customer (without adding a new head end)? </a></li>
+            	<div id="faq023" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq024" data-toggle="collapse"> Is it possible to perform LDAP synchronization more frequently than 6 hours? </a></li>
+            	<div id="faq024" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq025" data-toggle="collapse"> What if a user needs to be added immediately and the LDAP synchronization won’t occur in time to meet a requirement? </a></li>
+            	<div id="faq025" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq026" data-toggle="collapse"> Are simple MAC requests with BCE billable? </a></li>
+            	<div id="faq026" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq027" data-toggle="collapse"> Are complex MAC requests with BCE billable? </a></li>
+            	<div id="faq027" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq028" data-toggle="collapse"> What level of monitoring is provided with BCE? </a></li>
+            	<div id="faq028" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq029" data-toggle="collapse"> How long does a BCE deployment take? </a></li>
+            	<div id="faq029" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq030" data-toggle="collapse"> Is auto-attendant configuration included with BCE? </a></li>
+            	<div id="faq030" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq031" data-toggle="collapse"> Which phone models are supported with BCE? </a></li>
+            	<div id="faq031" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq032" data-toggle="collapse"> Can the customer use their existing phones? </a></li>
+            	<div id="faq032" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq033" data-toggle="collapse"> Can the customer procure their own phones? </a></li>
+            	<div id="faq033" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq034" data-toggle="collapse"> Is it possible to use different ringtones? </a></li>
+            	<div id="faq034" class="collapse"> answer 
+            	</div>
+        	<li><a class="list-group-item" href="#faq035" data-toggle="collapse"> Is it possible to use different phone background images? </a></li>
+            	<div id="faq035" class="collapse"> answer 
+            	</div>
+        	
+        </div>
+    </ul>
+</p>
