@@ -659,12 +659,12 @@ function progSearch() {
                 document.getElementById('message').innerHTML = '<input type="text" id="myInput" onkeyup="progSearch()" placeholder="Search FAQ" title="Search FAQ">';
                 $( "#content" ).load( "faq.html" );
                     
-                    //jQuery(function(){
-                      //      $("#myInput").focus(function() {
-                               // $(this).val('')
-                        //        $( "#content" ).load( "faq.html" );
-                          //  });
-                        //});
+                    jQuery(function(){
+                        $("#myInput").focus(function() {
+                            $(this).val('')
+                            $( "#content" ).load( "faq.html" );
+                            });
+                        });
                     
                     
 
