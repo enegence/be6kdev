@@ -87,16 +87,17 @@
             border: none;
             box-shadow: none;
         }
-        */
+    */
         .asText {
             background:none;
             border:none;
             margin:0;
             padding:0;
             text-align:left;
+            text-decoration: none;
         }
 
-       
+     
         #myUL div {
             margin-top: 5px;
             margin-left: 15px;
@@ -640,8 +641,8 @@ function progSearch() {
             }  
             case "100":{
                 document.getElementById('question').innerHTML = "Business Collaboration Express may not be the best fit.  Here's why:";
-                document.getElementById('message').innerHTML = "";
-                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+                document.getElementById('message').innerHTML = "Specific reason not provided.  Please review BCE requirements in FAQ and check out alternate solutions.";
+                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="300">FAQ</button></p><p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="400">Alternative Solutions</button></p>')
 
                 break;
 
@@ -649,7 +650,12 @@ function progSearch() {
             case "200":{
                 document.getElementById('question').innerHTML = 'Demo Videos';
                 //document.getElementById('message').innerHTML = '<input type="file" name="file" id="file">';
-                                $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
+                                $('#content').html(
+                                	'<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="201">Provisioning Overview</button></p>' + 
+					                '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="202">Managing Users and Phones</button></p>' +
+					                '<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="203">Voicemail and Services</button></p>' +
+                                	'<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>'
+                                	)
 
                 break;
 
@@ -673,7 +679,7 @@ function progSearch() {
             }
             case "400":{
                 document.getElementById('question').innerHTML = 'Alternative Solutions';
-                document.getElementById('message').innerHTML = "";
+                document.getElementById('message').innerHTML = "<p>The BCE solution may not be a suitable fit for this customer.</p><p>While the BCE solution may not be a good fit due to its restrictions, based on the information collected here are a number of alternative solutions that might work well for this customer.</p><p><ul><li>Adtran Gateway for SIP to TDM Conversion</li><li>Premise MIPT with Cisco BE 4000</li><li>MIPT Cisco UC - Premise</li></ul></p>";
                 $('#content').html('<p><button type="button" class="btn btn-default btn-lg btn-block" id="sendButton" value="99">Start Over</button></p>')
 
                 break;
